@@ -5,7 +5,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const handlebars = require('express-handlebars')
-				   .create({defaultLayout: 'main'});
+				   .create({
+						defaultLayout: 'main',
+					});
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -13,7 +15,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-	res.render('home');
+	res.render('home', {title: 'Homo Rodeo!'});
 });
 
 app.get('/about', (req, res) => {
