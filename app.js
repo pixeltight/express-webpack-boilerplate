@@ -1,26 +1,29 @@
 require('dotenv').config();
+
 const express = require('express');
-
+const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
 
-const handlebars = require('express-handlebars')
-				   .create({
-						defaultLayout: 'main',
-					});
+// views
+const handlebars = require('express-handlebars');
 
-app.engine('handlebars', handlebars.engine);
+app.set('views', path.join(__dirname, 'app_server', 'views'));
+console.log(path.join(__dirname, 'app_server', 'views'));
+app.engine('handlebars', handlebars({
+	defaultLayout: 'main',
+	layoutsDir: 'app_server/views/layouts'
+}));
 app.set('view engine', 'handlebars');
+			
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-	res.render('home', {title: 'Homo Rodeo!'});
-});
+// routes
+const routes = require('./app_server/routes/index');
+const about = require('./app_server/routes/about');
 
-app.get('/about', (req, res) => {
-	res.render('about', {title: 'About My Shop of Horrors'});	
-});
+app.use('/', routes);
+app.use('/about', about);
 
 // custom 404
 app.use((req, res, next) => {
@@ -32,8 +35,11 @@ app.use((req, res, next) => {
 app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500);
-	res.render('505');
+	res.render('500');
 });
+
+// server
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
 	console.log(`listening on port ${port}`);
