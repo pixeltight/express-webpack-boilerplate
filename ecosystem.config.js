@@ -6,7 +6,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-52-14-208-203.us-east-2.compute.amazonaws.com',
+      host: 'ec2-52-15-148-249.us-east-2.compute.amazonaws.com',
       key: '~/.ssh/aws-test.pem',
       ref: 'origin/master',
       repo: 'git@github.com:pixeltight/express-webpack-boilerplate.git',
