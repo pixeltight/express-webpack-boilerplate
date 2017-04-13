@@ -8,6 +8,8 @@
     "prebuild": "del-cli ./public/dist -f",
     "build": "webpack -p --display-error-details",
     "start": "npm run build && nodemon app.js",
+    "restart": "pm2 startOrRestart ecosystem.config.js",
+    "deploy": "pm2 deploy ecosystem.config.js production",
     "lint": "eslint --fix app.js ./app_server ./public/src/js"
   },
   "keywords": [],
