@@ -47,7 +47,7 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('styles.css'),
     new PurifyCssPlugin({
-      paths: glob.sync(path.join(__dirname, 'src/*.html'))
+      paths: glob.sync(path.join(__dirname, 'routes/*.js'))
     })
   ]
 }
