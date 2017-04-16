@@ -22,7 +22,6 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 // routes
 const routes = require('./app_server/routes/index')
-const about = require('./app_server/routes/about')
 
 app.use('/', routes)
 
