@@ -25,7 +25,6 @@ const routes = require('./app_server/routes/index')
 const about = require('./app_server/routes/about')
 
 app.use('/', routes)
-app.use('/about', about)
 
 // custom 404
 app.use((req, res, next) => {
