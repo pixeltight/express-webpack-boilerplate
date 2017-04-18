@@ -8,7 +8,7 @@ const ctrlStatic = require('../controllers/static')
 // dynamic pages
 router.get('/', ctrlClients.clientList)
 
-router.param('id', function (req, res, next) {
+router.param('id', (req, res, next) => {
   // index 0 = id:1 in clients model
   req.id = clients[req.params.id - 1]
   if (req.id) {
