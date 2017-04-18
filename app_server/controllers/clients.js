@@ -12,11 +12,10 @@ module.exports.clientList = function (req, res) {
 }
 
 module.exports.clientInfo = function (req, res) {
-	res.render('clientInfo', {
-		title: 'Hello',
-		name: 'Fredrik',
-		client: clients.filter(function(key) {
-			return key.id == req.params.id
-		})
-	})
+  res.render('clientInfo', {
+    title: 'Client',
+    client: clients.find(function (key) {
+      return key.id == req.params.id
+    })
+  })
 }

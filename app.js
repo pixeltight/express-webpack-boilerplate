@@ -20,6 +20,8 @@ app.set('view engine', '.hbs')
 
 app.use(express.static(path.join(__dirname, '/public')))
 
+
+
 // routes
 const routes = require('./app_server/routes/index')
 
