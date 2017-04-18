@@ -1,14 +1,17 @@
 [
   {
-   "name": "Triad",
-   "description": "i did work for Triad!"
+    "id": 1,
+    "name": "Triad",
+    "description": "i did work for Triad!"
   },
   {
-   "name": "Rooms to Go",
-   "description": "i did work for Rooms to Go!"
+    "id": 2,
+    "name": "Rooms to Go",
+    "description": "i did work for Rooms to Go!"
   },
   {
-   "name": "Office Depot",
-   "description": "i did work for Office Depot!"
+    "id": 3,
+    "name": "Office Depot",
+    "description": "i did work for Office Depot!"
   }
 ]

@@ -1,5 +1,8 @@
 /* GET 'home' page */
-let clients = require('../models/clients.json')
+const express = require('express')
+const app = express()
+
+var clients = require('../models/clients.json')
 
 module.exports.clientList = function (req, res) {
   res.render('clientList', {
@@ -9,7 +12,11 @@ module.exports.clientList = function (req, res) {
 }
 
 module.exports.clientInfo = function (req, res) {
-  res.render('clientInfo', {
-    title: 'Client Information'
-  })
+	res.render('clientInfo', {
+		title: 'Hello',
+		name: 'Fredrik',
+		client: clients.filter(function(key) {
+			return key.id == req.params.id
+		})
+	})
 }

@@ -6,10 +6,12 @@ let ctrlStatic = require('../controllers/static')
 
 // dynamic pages
 router.get('/', ctrlClients.clientList)
-router.get('/client/:id', ctrlClients.clientInfo)
+router.get('/clients/:id', ctrlClients.clientInfo)
 
 /* static pages */
 router.get('/about', ctrlStatic.about)
 router.get('/contact', ctrlStatic.contact)
+
+
 
 module.exports = router
