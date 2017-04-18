@@ -12,8 +12,9 @@ module.exports.clientList = function (req, res) {
 }
 
 module.exports.clientInfo = function (req, res) {
+	var arrIndex = req.params.id - 1
   res.render('clientInfo', {
-    title: 'Client',
+    title: 'Clients: ' + clients[arrIndex].name,
     client: clients.find(function (key) {
       return key.id == req.params.id
     })
