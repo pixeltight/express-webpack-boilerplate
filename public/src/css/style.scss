@@ -1,7 +1,78 @@
+$hamburger-padding-x: 8px;
+$hamburger-padding-y: 8px;
+
+$base-color: #292b2c;
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+
+.hamburger {
+  //background: lighten( $base-color, 15% );
+  width: 48px;
+  height: 48px;
+  padding: $hamburger-padding-x $hamburger-padding-y 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1100;
+}
+
+.hamburger-inner {
+  background: #FFF;
+  width: 32px;
+  height: 3px;
+  
+  &::before,
+  &::after {
+    background: #FFF;
+    width: 32px;
+    height: 3px;
+  }
+}
+
+@media (min-width: 576px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+#flyoutMenu {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFE600;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  transform: translate3d(-100vw, 0, 0);
+  transition: transform 0.3s cubic-bezier(0, .52, 0, 1);
+
+  h2 {
+
+    a {
+    color: #333;
+    margin-left: 15px;
+    text-decoration: none;
+    
+      &:hover {
+        text-decoration: underline;
+      }
+
+    }
+  }
+
+  &.show {
+    transform: translate3d(0vw, 0, 0)
+  }
+}
+
 $bitch-color: #456789;
 
 body {
-  border: 8px dotted red;
+  border: $bitch-color;
   color: $bitch-color;
   display: flex;
 }

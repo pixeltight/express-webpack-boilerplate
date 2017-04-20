@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "del-cli ./public/dist -f",
-    "build": "webpack -p --display-error-details",
+    "build": "webpack --display-error-details",
     "start": "npm run build && nodemon app.js",
     "restart": "pm2 startOrRestart ecosystem.config.js",
     "deploy": "pm2 deploy ecosystem.config.js production",
@@ -37,6 +37,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "glob": "^7.1.1",
+    "hamburgers": "^0.8.1",
     "handlebars": "^4.0.6",
     "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
@@ -45,6 +46,7 @@
     "purifycss-webpack": "^0.6.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.3.3"
+    "webpack": "^2.3.3",
+    "webpack-dev-server": "^2.4.2"
   }
 }

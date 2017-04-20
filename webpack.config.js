@@ -1,7 +1,4 @@
 const path = require('path')
-const glob = require('glob')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const PurifyCssPlugin = require('purifycss-webpack')
 
 module.exports = {
   context: path.resolve(__dirname, 'public/src'),
@@ -21,33 +18,12 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => ([
-                  require('autoprefixer')
-                ])
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                precision: 8
-              }
-            }
-          ]
-        })
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin('styles.css'),
-    new PurifyCssPlugin({
-      paths: glob.sync(path.join(__dirname, './app_server/views/**/*.hbs'))
-    })
-  ]
+  }
 }
