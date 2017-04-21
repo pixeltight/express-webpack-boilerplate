@@ -23,6 +23,16 @@ textarea:focus {
   position: fixed;
 }
 
+.navbar {
+    flex-direction: row;
+    width: 30%;
+    justify-content: space-between;
+
+    @media (max-width: 575px) {
+      display: none;
+    }
+}
+
 .hamburger {
   //background: lighten( $base-color, 15% );
   width: 48px;
@@ -78,7 +88,7 @@ textarea:focus {
     opacity: 0;
     transform: translate3d(0, 33%, 0);
     transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
+
     @media (min-width: 568px) and (orientation: landscape) {
       flex-basis: 50%;
     }
