@@ -3,7 +3,8 @@ $hamburger-padding-y: 8px;
 
 $base-color: #292b2c;
 
-body {
+body,
+.header {
   @media (min-width: 960px) {
     padding: 0 15%;
   }
@@ -56,7 +57,7 @@ textarea:focus {
   top: 0;
   left: 0;
   transform: translate3d(0, -100vh, 0);
-  transition: transform 0.3s cubic-bezier(0, .52, 0, 1);
+  transition: transform 0.4s cubic-bezier(0, .52, 0, 1);
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -77,10 +78,14 @@ textarea:focus {
     opacity: 0;
     transform: translate3d(0, 33%, 0);
     transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-    &:hover {
-      background: #FFF;
+    
+    @media (min-width: 568px) and (orientation: landscape) {
+      flex-basis: 50%;
     }
+
+    // &:hover {
+    //  background: #FFF;
+    // }
   }
 
   &.show {
