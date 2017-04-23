@@ -1,1 +1,30 @@
 <h1>Contact Jason Kerr</h1>
+{{#if msg}}
+  {{#if error}}
+    <div class="msgbox err">{{msg}}</div>
+  {{else}}
+    <div class="msgbox success">{{msg}}</div>
+  {{/if}}
+{{/if}}
+<div class="content">
+
+  <form action='/contact' name="contact-form" id="contact-form" method="post">
+    <fieldset>
+      <p>
+        <label for="name">name:</label><br>
+        <input name="user[name]" id="name" type="text" value="">
+      </p>
+      <p>
+        <label for="email">email:</label><br>
+        <input name="user[email]" id="email" type="email" value="">
+      </p>
+      <p>
+        <label for="message">message:</label><br>
+        <textarea name="user[message]" id="message" type="text" value=""></textarea>
+      </p>
+      <p>
+        <input name="submit" type="submit" value="send">
+      </p>
+    </fieldset>
+  </form>
+</div>

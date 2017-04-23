@@ -4,18 +4,18 @@ import '../css/style.scss'
 let hamburger = document.querySelector('#burgerToggle')
 let flyoutMenu = document.querySelector('#flyoutMenu')
 
-function showMenu() {
+function showMenu () {
   flyoutMenu.classList.add('show')
   document.body.style.overflow = 'hidden'
 }
 
-function hideMenu() {
+function hideMenu () {
   flyoutMenu.classList.remove('show')
   document.body.style.overflow = 'auto'
 }
 
 hamburger.addEventListener('click', () => {
-  if(!hamburger.classList.contains('is-active')) {
+  if (!hamburger.classList.contains('is-active')) {
     hamburger.classList.add('is-active')
     showMenu()
   } else {
@@ -23,4 +23,3 @@ hamburger.addEventListener('click', () => {
     hideMenu()
   }
 }, false)
-
