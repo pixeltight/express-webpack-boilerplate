@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer')
-//const credentials = require('../../credentials')
+const credentials = require('../../credentials')
 
 /* GET home page. */
 module.exports.about = (req, res) => {
