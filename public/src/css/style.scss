@@ -1,3 +1,18 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+@import "../../../node_modules/font-awesome/scss/font-awesome.scss";
+
+@font-face {
+  font-family: 'Governor';
+  src: url('../fonts/governor/governor.ttf');
+}
+
+body {
+  font-family: 'Governor', arial, sans-serif;
+  background: url(../img/bob.png) 50% 50% no-repeat;
+}
+
+
 $hamburger-padding-x: 8px;
 $hamburger-padding-y: 8px;
 

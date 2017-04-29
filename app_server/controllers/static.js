@@ -31,10 +31,10 @@ module.exports.sendMail = (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      res.render('contact', {title: 'PixelTight - Contact', msg: 'Error occurred. Message not sent.', err: true })
+      res.render('contact', { title: 'PixelTight - Contact', msg: 'Error occurred. Message not sent.', err: true })
       return console.log(error)
     } else {
-      res.render('contact', {title: 'PixelTight - Contact', msg: 'Message sent! Thank you.', err: false })
+      res.render('contact', { title: 'PixelTight - Contact', msg: 'Message sent! Thank you.', err: false })
       return console.log('Message %s sent %s', info.messageId, info.response)
     }
   })

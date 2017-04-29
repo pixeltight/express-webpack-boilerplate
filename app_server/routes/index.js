@@ -26,7 +26,7 @@ router.get('/about', ctrlStatic.about)
 router.get('/contact', ctrlStatic.contact)
 /* sendMail */
 router.use(bodyParser.urlencoded({
-	extended: true
+  extended: true
 }))
 
 router.use(bodyParser.json())
