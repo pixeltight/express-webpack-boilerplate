@@ -1,22 +1,38 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "../../../node_modules/font-awesome/scss/font-awesome.scss";
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,700,700i');
 
 @font-face {
   font-family: 'Governor';
   src: url('../fonts/governor/governor.ttf');
 }
 
+$base-color: #292b2c;
+$red: #B60000;
+$light-gray: #CFD3CA;
+
+$aqua: #54A8AB;
+$deep-blue: #071B2D;
+$blue-black: #030306;
+
+
 body {
-  font-family: 'Governor', arial, sans-serif;
-  background: url(../img/bob.png) 50% 50% no-repeat;
+  background: $light-gray url(../img/bob.png) 50% 50% no-repeat;
 }
 
+a {
+  transition: color .2s, background .2s;
+  color: $aqua;
+
+  &:hover {
+    text-decoration: none;
+    color: $blue-black;
+  }
+}
 
 $hamburger-padding-x: 8px;
 $hamburger-padding-y: 8px;
-
-$base-color: #292b2c;
 
 body,
 .header {
@@ -36,15 +52,70 @@ textarea:focus {
   justify-content: space-between;
   z-index: 5;
   position: fixed;
+
+  a {
+    color: $light-gray;
+
+    &:hover {
+      text-decoration: none;
+      color: $aqua;
+    }
+  }
+}
+
+.navbar-brand {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 1rem;
+  font-size: 1.75rem;
+  padding: 0.75rem;
+
+  i {
+    font-style: normal;
+    letter-spacing: 1px;
+    position: relative;
+    left: -4px;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: #EEF;
+    text-transform: lowercase;
+    letter-spacing: 8px;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
 }
 
 .navbar {
     flex-direction: row;
-    width: 30%;
+    width: 302px;
     justify-content: space-between;
+    position: relative;
 
     @media (max-width: 575px) {
       display: none;
+    }
+
+    .nav-item {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 162%;
+        top: 0;
+        width: 2px;
+        height: 24px;
+        transform: rotate(20deg);
+        border-radius: 2px;
+        background: $light-gray;
+      }
     }
 }
 
@@ -76,7 +147,7 @@ textarea:focus {
 #flyoutMenu {
   width: 100vw;
   height: 100%;
-  background-color: #FFE600;
+  background-color: $deep-blue;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -95,6 +166,7 @@ textarea:focus {
   .nav-item {
     text-align: center;
     font-size: 21px;
+    font-weight: bold;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 100%;
@@ -131,9 +203,8 @@ textarea:focus {
   }
 }
 
-$bitch-color: #456789;
-
-body {
-  border: $bitch-color;
-  color: $bitch-color;
+main {
+  background: $red;
+  display: block;
+  height: 250px;
 }
