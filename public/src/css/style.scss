@@ -53,6 +53,11 @@ textarea:focus {
   line-height: 1rem;
   font-size: 1.75rem;
   padding: 0.75rem;
+  // order: 2;
+
+  // @media (min-width: 576px) {
+  //   order: 1;
+  // } 
 
   i {
     font-style: normal;
@@ -75,15 +80,16 @@ textarea:focus {
 }
 
 .navbar {
-    display: flex;
+    display: none;
     flex-direction: row;
     width: 302px;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    display: none;
 
-    @media (max-width: 575px) {
-      display: none;
+    @media (min-width: 576px) {
+      display: flex;
     }
 
     .navbar__link {
@@ -122,6 +128,7 @@ textarea:focus {
   padding: $hamburger-padding-x $hamburger-padding-y 2px;
   z-index: 10;
   opacity: 1;
+  //order: 1;
 
   @media (min-width: 576px) {
     display: none;
@@ -144,7 +151,7 @@ textarea:focus {
 .mobile-nav {
   width: 100vw;
   height: 100%;
-  background-color: $deep-blue;
+  background-color: $light-gray;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -161,6 +168,7 @@ textarea:focus {
   }
 
   .mobile-nav__link {
+    color: ligthten($deep-blue, 10%);
     text-align: center;
     font-size: 21px;
     font-weight: bold;
@@ -207,27 +215,35 @@ textarea:focus {
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
-  padding: 9rem 5rem;
+  padding: 3.75rem 0.75rem 1rem;
   top: 0;
   left: 0;
-  z-index: -1;
+
+  @media (min-width: 576px) {
+    padding: 9rem 5rem;
+  }
 
   .main__hero {
     background: rgba(252, 252, 252, 0.7);
-    padding: 2rem 3rem;
+    padding: 1rem 1rem 1rem;
     border-radius: 0 1rem;
     text-align: center;
+
+    @media (min-width: 576px) {
+      padding: 9rem 5rem;
+    }
 
     .main__hero--header {
       color: $coral-dark;
       position: relative;
       transform: translateY(100%);
-      animation-name: cd-reveal-up;
-      animation-fill-mode: forwards;
-      animation-duration: 0.4s;
-      animation-delay: 0.7s;
-      cursor: text;
+      animation: cd-reveal-up 0.4s 0.7s forwards;
       opacity: 0;
+      font-size: 1.25rem;
+
+      @media (min-width: 576px) {
+        font-size: 1rem;
+      }
 
       &:after {
         content: '';
