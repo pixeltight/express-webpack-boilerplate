@@ -4,6 +4,7 @@ const clients = require('../models/clients.json')
 module.exports.clientList = (req, res) => {
   res.render('clientList', {
     title: 'Jason Kerr Homepage',
+    layout: 'main-with-hero',
     clients: clients
   })
 }

@@ -3,22 +3,20 @@
 @import "../../../node_modules/font-awesome/scss/font-awesome.scss";
 @import url('https://fonts.googleapis.com/css?family=Overpass:400,700,700i');
 
-@font-face {
-  font-family: 'Governor';
-  src: url('../fonts/governor/governor.ttf');
-}
-
 $base-color: #292b2c;
-$red: #B60000;
+$coral: #FF7F50;
+$coral-dark: darken($coral, 15%);
 $light-gray: #CFD3CA;
 
 $aqua: #54A8AB;
 $deep-blue: #071B2D;
 $blue-black: #030306;
 
+$hamburger-padding-x: 8px;
+$hamburger-padding-y: 8px;
 
 body {
-  background: $light-gray url(../img/bob.png) 50% 50% no-repeat;
+  height: 1400px;
 }
 
 a {
@@ -27,20 +25,11 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: $blue-black;
+    color: $deep-blue;
   }
 }
 
-$hamburger-padding-x: 8px;
-$hamburger-padding-y: 8px;
-
-body,
-.header {
-  @media (min-width: 960px) {
-    padding: 0 15%;
-  }
-}
-
+/* hate that ugly outline in Chrome */
 button:focus,
 input:focus,
 textarea:focus {
@@ -52,15 +41,8 @@ textarea:focus {
   justify-content: space-between;
   z-index: 5;
   position: fixed;
-
-  a {
-    color: $light-gray;
-
-    &:hover {
-      text-decoration: none;
-      color: $aqua;
-    }
-  }
+  background: $deep-blue;
+  border-bottom: 1px dotted $light-gray;
 }
 
 .navbar-brand {
@@ -93,19 +75,27 @@ textarea:focus {
 }
 
 .navbar {
+    display: flex;
     flex-direction: row;
     width: 302px;
     justify-content: space-between;
+    align-items: center;
     position: relative;
 
     @media (max-width: 575px) {
       display: none;
     }
 
-    .nav-item {
+    .navbar__link {
       position: relative;
+      color: lighten($aqua, 20%);
 
-      &::after {
+      &:hover {
+        text-decoration: none;
+        color: $aqua;
+      }
+
+      &:after {
         content: '';
         position: absolute;
         left: 162%;
@@ -115,6 +105,13 @@ textarea:focus {
         transform: rotate(20deg);
         border-radius: 2px;
         background: $light-gray;
+      }
+
+      &:nth-last-of-type(1) {
+
+        &:after {
+          display: none;
+        }
       }
     }
 }
@@ -144,7 +141,7 @@ textarea:focus {
   }
 }
 
-#flyoutMenu {
+.mobile-nav {
   width: 100vw;
   height: 100%;
   background-color: $deep-blue;
@@ -163,7 +160,7 @@ textarea:focus {
     display: none;
   }
 
-  .nav-item {
+  .mobile-nav__link {
     text-align: center;
     font-size: 21px;
     font-weight: bold;
@@ -184,7 +181,7 @@ textarea:focus {
   &.show {
     transform: translate3d(0, 0, 0);
 
-    .nav-item {
+    .mobile-nav__link {
       transform: translate3d(0, 0, 0);
       opacity: 1;
 
@@ -203,8 +200,89 @@ textarea:focus {
   }
 }
 
-main {
-  background: $red;
+.main {
+  background: #FFF url("../img/bg_water.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: block;
-  height: 250px;
+  padding: 9rem 5rem;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  .main__hero {
+    background: rgba(252, 252, 252, 0.7);
+    padding: 2rem 3rem;
+    border-radius: 0 1rem;
+    text-align: center;
+
+    .main__hero--header {
+      color: $coral-dark;
+      position: relative;
+      transform: translateY(100%);
+      animation-name: cd-reveal-up;
+      animation-fill-mode: forwards;
+      animation-duration: 0.4s;
+      animation-delay: 0.7s;
+      cursor: text;
+      opacity: 0;
+
+      &:after {
+        content: '';
+        background-color: $aqua;
+        position: absolute;
+        bottom: -.225em;
+        left: 0;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        animation: cd-loading-mask 1s 0.3s both;
+      }
+    }
+
+    .main__hero--copy {
+      position: relative;
+      transform: translateY(-100%);
+      animation: cd-reveal-down 0.4s 0.7s forwards;
+      opacity: 0;
+    }
+  }
 }
+
+footer {
+  // background: $deep-blue;
+}
+
+@keyframes cd-loading-mask {
+  0%, 100% {
+    transform: scaleX(0);
+  }
+  40%, 60% {
+    transform: scaleX(1);
+  } 
+}
+
+@keyframes cd-reveal-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cd-reveal-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
