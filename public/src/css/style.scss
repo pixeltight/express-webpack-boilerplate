@@ -1,15 +1,16 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
 @import "../../../node_modules/font-awesome/scss/font-awesome.scss";
-@import url('https://fonts.googleapis.com/css?family=Overpass:400,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Raleway|Ubuntu:400,500');
 
 $base-color: #292b2c;
 $coral: #FF7F50;
 $coral-dark: darken($coral, 15%);
-$light-gray: #CFD3CA;
+$light-gray: lighten(#CFD3CA, 15%);
+$coral-light: lighten($coral, 25%);
 
 $aqua: #54A8AB;
-$deep-blue: #071B2D;
+$deep-blue: lighten(#071B2D, 10%);
 $blue-black: #030306;
 
 $hamburger-padding-x: 8px;
@@ -17,6 +18,9 @@ $hamburger-padding-y: 8px;
 
 body {
   height: 1400px;
+  font-family: 'Raleway', helvetica, verdana, arial, sans-serif;
+  background: $light-gray;
+  color: $base-color;
 }
 
 a {
@@ -42,36 +46,27 @@ textarea:focus {
   z-index: 5;
   position: fixed;
   background: $deep-blue;
-  border-bottom: 1px dotted $light-gray;
 }
 
 .navbar-brand {
-  font-family: 'Overpass', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: all-caps;
   font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 5px;
-  line-height: 1rem;
+  letter-spacing: 4px;
+  line-height: 1.2rem;
   font-size: 1.75rem;
   padding: 0.75rem;
-  // order: 2;
+  color: #EEF;
 
   // @media (min-width: 576px) {
   //   order: 1;
-  // } 
+  // }
 
-  i {
-    font-style: normal;
-    letter-spacing: 1px;
-    position: relative;
-    left: -4px;
-    font-weight: 700;
-  }
-
-  span {
-    font-size: 0.85rem;
+  .navbar-brand--small {
+    font-size: 0.75rem;
     color: #EEF;
-    text-transform: lowercase;
-    letter-spacing: 8px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
 
     @media (max-width: 576px) {
       display: none;
@@ -123,7 +118,7 @@ textarea:focus {
 }
 
 .hamburger {
-  background: lighten( $base-color, 15% );
+  background: transparent;
   width: 44px;
   padding: $hamburger-padding-x $hamburger-padding-y 2px;
   z-index: 10;
@@ -215,41 +210,57 @@ textarea:focus {
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
-  padding: 3.75rem 0.75rem 1rem;
-  top: 0;
-  left: 0;
+  padding: 3.75rem 1.5rem 1.5rem;
 
   @media (min-width: 576px) {
-    padding: 9rem 5rem;
+    padding: 7rem 3em 4em;
   }
 
   .main__hero {
     background: rgba(252, 252, 252, 0.7);
-    padding: 1rem 1rem 1rem;
-    border-radius: 0 1rem;
+    padding: 2rem;
+    border-radius: 1rem;
     text-align: center;
 
     @media (min-width: 576px) {
-      padding: 9rem 5rem;
+      padding: 4rem;
     }
 
     .main__hero--header {
-      color: $coral-dark;
+      color: $deep-blue;
+      font-family: 'Ubuntu', arial, sans-serif;
       position: relative;
       transform: translateY(100%);
       animation: cd-reveal-up 0.4s 0.7s forwards;
       opacity: 0;
-      font-size: 1.25rem;
+      font-size: 2rem;
+      line-height: 1.2rem;
+      letter-spacing: 5px;
+      font-weight: 500;
+
+        .main__hero--header-small {
+          font-size: 0.75rem;
+          letter-spacing: 8px;
+          color: $coral;
+          text-transform: uppercase;
+
+          @media (min-width: 576px) {
+            font-size: 1rem;
+            letter-spacing: 12px;
+          }
+        }
 
       @media (min-width: 576px) {
-        font-size: 1rem;
+        font-size: 3rem;
+        line-height: 1.5rem;
+        letter-spacing: 5px;
       }
 
       &:after {
         content: '';
         background-color: $aqua;
         position: absolute;
-        bottom: -.225em;
+        bottom: -0.225em;
         left: 0;
         right: 0;
         height: 2px;
@@ -263,6 +274,22 @@ textarea:focus {
       transform: translateY(-100%);
       animation: cd-reveal-down 0.4s 0.7s forwards;
       opacity: 0;
+
+      .main__hero--icons {
+        display: flex;
+        justify-content: space-around;
+        color: #FFF;
+        font-size: 1.5em;
+        padding: 0 15%;
+
+        i {
+          padding: 0.5rem;
+          border-radius: 50%;
+          background: $coral;
+          width: 1.75em;
+          height: 1.75em;
+        }
+      }
     }
   }
 }
