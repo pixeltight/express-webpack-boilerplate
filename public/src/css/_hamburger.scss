@@ -1,0 +1,24 @@
+.hamburger {
+  background: transparent;
+  width: 44px;
+  padding: $hamburger-padding-x $hamburger-padding-y 2px;
+  z-index: 10;
+  opacity: 1;
+
+  @media (min-width: 576px) {
+    display: none;
+  }
+}
+
+.hamburger-inner {
+  background: #FFF;
+  width: 25px;
+  height: 3px;
+  
+  &::before,
+  &::after {
+    background: #FFF;
+    width: 25px;
+    height: 3px;
+  }
+}

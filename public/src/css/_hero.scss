@@ -1,0 +1,90 @@
+.main {
+  background: #FFF url("../img/bg_water.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  padding: 3.75rem 1.5rem 1.5rem;
+
+  @media (min-width: 576px) {
+    padding: 7rem 3em 4em;
+  }
+
+  .main__hero {
+    background: rgba(252, 252, 252, 0.7);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+
+    @media (min-width: 576px) {
+      padding: 4rem;
+    }
+
+    .main__hero--header {
+      color: $deep-blue;
+      font-family: 'Ubuntu', arial, sans-serif;
+      position: relative;
+      transform: translateY(100%);
+      animation: cd-reveal-up 0.4s 0.7s forwards;
+      opacity: 0;
+      font-size: 2rem;
+      line-height: 1.2rem;
+      letter-spacing: 5px;
+      font-weight: 500;
+
+        .main__hero--header-small {
+          font-size: 0.75rem;
+          letter-spacing: 8px;
+          color: $coral;
+          text-transform: uppercase;
+
+          @media (min-width: 576px) {
+            font-size: 1rem;
+            letter-spacing: 12px;
+          }
+        }
+
+      @media (min-width: 576px) {
+        font-size: 3rem;
+        line-height: 1.5rem;
+        letter-spacing: 5px;
+      }
+
+      &:after {
+        content: '';
+        background-color: $aqua;
+        position: absolute;
+        bottom: -0.225em;
+        left: 0;
+        right: 0;
+        height: 2px;
+        width: 100%;
+        animation: cd-loading-mask 1s 0.3s both;
+      }
+    }
+
+    .main__hero--copy {
+      position: relative;
+      transform: translateY(-100%);
+      animation: cd-reveal-down 0.4s 0.7s forwards;
+      opacity: 0;
+
+      .main__hero--icons {
+        display: flex;
+        justify-content: space-around;
+        color: #FFF;
+        font-size: 1.5em;
+        padding: 0 15%;
+
+        i {
+          padding: 0.5rem;
+          border-radius: 50%;
+          background: $coral;
+          width: 1.75em;
+          height: 1.75em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.mobile-nav {
+  width: 100vw;
+  height: 100%;
+  background-color: $light-gray;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.4s cubic-bezier(0, .52, 0, 1);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  align-content: center;
+
+  @media (min-width: 576px) {
+    display: none;
+  }
+
+  .mobile-nav__link {
+    color: ligthten($deep-blue, 10%);
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    padding: 24px;
+    text-transform: lowercase;
+    opacity: 0;
+    transform: translate3d(0, 33%, 0);
+    transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    @media (min-width: 568px) and (orientation: landscape) {
+      flex-basis: 50%;
+    }
+  }
+
+  &.show {
+    transform: translate3d(0, 0, 0);
+
+    .mobile-nav__link {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+
+      $n: 3;
+      $delay: 0.1;
+
+      @for $i from 1 through $n {
+        $item-delay: $delay * ($i + 3);
+      
+
+        &:nth-of-type(#{$i}) {
+          transition-delay: #{$item-delay}s;
+        }
+      }
+    }
+  }
+}

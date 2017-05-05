@@ -1,0 +1,39 @@
+body {
+  height: 1400px;
+  font-family: 'Raleway', helvetica, verdana, arial, sans-serif;
+  background: $light-gray;
+  color: $base-color;
+}
+
+a {
+  transition: color .2s, background .2s;
+  color: $aqua;
+
+  &:hover {
+    text-decoration: none;
+    color: $deep-blue;
+  }
+}
+
+/* hate that ugly outline in Chrome */
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+  position: fixed;
+  background: $deep-blue;
+}
+
+
+
+
+
+footer {
+  // background: $deep-blue;
+}

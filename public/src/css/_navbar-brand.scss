@@ -1,0 +1,21 @@
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  text-transform: all-caps;
+  font-weight: 400;
+  letter-spacing: 4px;
+  line-height: 1.2rem;
+  font-size: 1.75rem;
+  padding: 0.75rem;
+  color: #EEF;
+
+  .navbar-brand--small {
+    font-size: 0.75rem;
+    color: #EEF;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+}
