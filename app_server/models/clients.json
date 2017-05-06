@@ -13,5 +13,20 @@
     "id": 3,
     "name": "Office Depot",
     "description": "i did work for Office Depot!"
+  },
+  {
+    "id": 4,
+    "name": "Marlowe McNabb",
+    "description": "i did work for Marlowe McNabb!"
+  },
+  {
+    "id": 5,
+    "name": "CastForce",
+    "description": "i did work for CastForce!"
+  },
+  {
+    "id": 6,
+    "name": "SavvyCard",
+    "description": "i did work for SavvyCard!"
   }
 ]

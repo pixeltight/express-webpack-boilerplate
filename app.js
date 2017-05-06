@@ -1,23 +1,23 @@
 require('dotenv').config()
 
 const express = require('express')
+const exhbs = require('express-handlebars')
 const path = require('path')
+
 const app = express()
-
 // views
-const handlebars = require('express-handlebars')
-
 app.set('views', path.join(__dirname, 'app_server', 'views'))
-console.log(path.join(__dirname, 'app_server', 'views'))
-app.engine('.hbs',
-  handlebars({
-    extname: '.hbs',
-    defaultLayout: 'main',
-    layoutsDir: 'app_server/views/layouts'
-  })
-)
-app.set('view engine', '.hbs')
 
+const hbs = exhbs.create({
+  extname: 'hbs',
+  defaultLayout: 'main',
+  layoutsDir: 'app_server/views/layouts'
+})
+
+app.engine('hbs', hbs.engine)
+app.set('view engine', 'hbs')
+
+// set static file directory
 app.use(express.static(path.join(__dirname, '/public')))
 
 // routes
