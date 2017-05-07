@@ -41,8 +41,18 @@ module.exports = {
         test: /\.scss$/,
         use: [
           'style-loader',
-          'css-loader',
-          'sass-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              devtool: 'source-map'
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              devtool: 'source-map'
+            }
+          }
         ]
       }
     ]
