@@ -1,6 +1,7 @@
 $base-color: #292b2c;
+$dark-gray: darken($base-color, 5%);
 $coral: #FF7F50;
-$coral-dark: darken($coral, 15%);
+$coral-dark: desaturate(#FF4704, 5%);
 $light-gray: lighten(#CFD3CA, 15%);
 $coral-light: lighten($coral, 25%);
 
