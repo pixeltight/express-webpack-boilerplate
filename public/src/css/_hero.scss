@@ -23,7 +23,7 @@
 
     .main__hero--header {
       color: $deep-blue;
-      font-family: 'Ubuntu', arial, sans-serif;
+      font-family: $ubuntu;
       position: relative;
       transform: translateY(100%);
       animation: cd-reveal-up 0.4s 0.7s forwards;

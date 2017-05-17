@@ -18,14 +18,21 @@
 	<p>Hello. My name is Jason Kerr. I do frontend devlopment. I bring ideas to life in the web browser no matter the device or width. I have done work from major corporate enerprise level endeavors to startup projects that neeeded help getting off the ground. Please check out some of my project work below.</p>
 </section>
 <section class="thumbnails">
-	<h2>Client List</h2>
-	<div class="thumbnails__list">
-	{{#each clients}}
-		<a class="thumbnails__link" href="/clients/{{id}}">
-			<img src="" title="" alt=""><img src="http://placehold.it/250x250"></a>
-		</a>
-	{{/each}}
-	</div>
+	<h2 class="thumbnails__header">Client List</h2>
+
+  <div class="row thumbnails__list">
+  {{#each clients}}
+    <div class="col-12 col-sm-6 col-lg-4">
+      <a class="thumbnails__link" href="/clients/{{id}}">
+        <img src="http://placehold.it/250x250" class="thumbnails__item">
+        <div class="thumbnails__link--shadow">
+          <span>triad digital media</span>
+        </div>
+      </a>
+    </div>
+  {{/each}}
+</div>
+
 </section>
 
 {{!--

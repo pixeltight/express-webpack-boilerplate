@@ -1,5 +1,7 @@
 import '../css/style.scss'
+import './jquery.hoverdir.js'
 
+// flyout menu
 let hamburger = document.querySelector('#burgerToggle')
 let flyoutMenu = document.querySelector('#flyoutMenu')
 
@@ -22,3 +24,10 @@ hamburger.addEventListener('click', () => {
     hideMenu()
   }
 }, false)
+
+// thumbnail animated hover
+$(function() {   
+  $('.thumbnails__link').each( function() { 
+    $(this).hoverdir(); 
+  });
+});
