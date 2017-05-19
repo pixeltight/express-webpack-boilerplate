@@ -1,4 +1,4 @@
-import '../css/style.scss'
+import '../scss/style.scss'
 import './jquery.hoverdir.js'
 
 // flyout menu
@@ -27,7 +27,7 @@ hamburger.addEventListener('click', () => {
 
 // thumbnail animated hover
 $(function() {   
-  $('.thumbnails__link').each( function() { 
+  $('.thumbnails__container').each( function() { 
     $(this).hoverdir(); 
   });
 });

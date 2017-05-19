@@ -6,8 +6,10 @@
     <div class="msgbox success">{{msg}}</div>
   {{/if}}
 {{/if}}
-<div class="content">
-
+<div class="content" style="margin-top: 60px">
+  {{#if flash}}
+    There were errors in the form field
+  {{/if}}
   <form action='/contact' name="contact-form" id="contact-form" method="post">
     <fieldset>
       <p>
@@ -16,11 +18,11 @@
       </p>
       <p>
         <label for="email">email:</label><br>
-        <input name="user[email]" id="email" type="email" value="">
+        <input name="user[email]" id="email" type="text" value=""> 
       </p>
       <p>
         <label for="message">message:</label><br>
-        <textarea name="user[message]" id="message" type="text" value=""></textarea>
+        <textarea name="user[message]" id="message" value=""></textarea>
       </p>
       <p>
         <input name="submit" type="submit" value="send">
@@ -28,3 +30,6 @@
     </fieldset>
   </form>
 </div>
+
+<!--required title="message field cannot be blank">-->
+<!--required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address"-->

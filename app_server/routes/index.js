@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const bodyParser = require('body-parser')
+const expressValidator = require('express-validator')
 const clients = require('../models/clients.json')
 const ctrlClients = require('../controllers/clients')
 const ctrlStatic = require('../controllers/static')
@@ -28,6 +29,7 @@ router.get('/contact', ctrlStatic.contact)
 router.use(bodyParser.urlencoded({
   extended: true
 }))
+router.use(expressValidator());
 
 router.use(bodyParser.json())
 
