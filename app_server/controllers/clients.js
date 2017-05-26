@@ -21,7 +21,7 @@ module.exports.clientInfo = (req, res) => {
   }
   let nextPage = currentPage + 1
   if (nextPage > endPage) {
-    nextPage = startPage 
+    nextPage = startPage
   }
   res.render('clientInfo', {
     title: 'Clients: ' + clients[arrIndex].name,

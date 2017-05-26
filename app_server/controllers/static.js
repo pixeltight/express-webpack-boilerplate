@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer')
-const expressValidator = require('express-validator')
 const credentials = require('../../credentials')
 
 /* GET home page. */
@@ -12,18 +11,22 @@ module.exports.contact = (req, res) => {
 }
 
 module.exports.sendMail = (req, res) => {
-  console.log(req.body.user.name)
-  console.log(req.body.user.email)
-  console.log(req.body.user.message)
+  // console.log(req.body.user.name)
+  // console.log(req.body.user.email)
+  // console.log(req.body.user.message)
 
-  req.checkBody('user.name', 'Name is a required field').notEmpty().isInt();
-  req.assert('user.name', 'Invalid email')
+  req.checkBody('user.name', 'Name is a required field').notEmpty()
+  req.checkBody('user.email', 'Please enter a valid email address').isEmail()
+  req.checkBody('user.message', 'Please enter a message').notEmpty()
 
   var errors = req.validationErrors()
   console.log(errors)
 
-  if(errors) {
-    res.render('contact', { title: 'PixelTight - Contact', flash: { type: 'alert-danger', messages: errors }})
+  if (errors) {
+    // res.render('contact', { title: 'PixelTight - Contact Error!', messages: errors})
+    res.send({ messages: errors})
+  } else {
+    res.render('contact', { title: 'PixelTight - Contact is good!' })
   }
   // let transporter = nodemailer.createTransport({
   //   service: 'gmail',

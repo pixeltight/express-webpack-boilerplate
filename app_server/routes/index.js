@@ -29,7 +29,7 @@ router.get('/contact', ctrlStatic.contact)
 router.use(bodyParser.urlencoded({
   extended: true
 }))
-router.use(expressValidator());
+router.use(expressValidator())
 
 router.use(bodyParser.json())
 

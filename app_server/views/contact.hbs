@@ -1,35 +1,25 @@
 <h1>Contact Jason Kerr</h1>
-{{#if msg}}
-  {{#if error}}
-    <div class="msgbox err">{{msg}}</div>
-  {{else}}
-    <div class="msgbox success">{{msg}}</div>
-  {{/if}}
-{{/if}}
-<div class="content" style="margin-top: 60px">
-  {{#if flash}}
-    There were errors in the form field
-  {{/if}}
+
+<div class="error-block" style="margin-top: 60px; background: #FFE; height: 150px;">
+
+</div>
   <form action='/contact' name="contact-form" id="contact-form" method="post">
     <fieldset>
       <p>
         <label for="name">name:</label><br>
-        <input name="user[name]" id="name" type="text" value="">
+        <input name="user[name]" id="name" type="text" value="" required>
       </p>
       <p>
         <label for="email">email:</label><br>
-        <input name="user[email]" id="email" type="text" value=""> 
+        <input name="user[email]" id="email" type="text" value="" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address"> 
       </p>
       <p>
         <label for="message">message:</label><br>
-        <textarea name="user[message]" id="message" value=""></textarea>
+        <textarea name="user[message]" id="message" value="" required title="message field cannot be blank"></textarea>
       </p>
       <p>
-        <input name="submit" type="submit" value="send">
+        <button name="submit" type="submit" value="send">send</button>
       </p>
     </fieldset>
   </form>
-</div>
 
-<!--required title="message field cannot be blank">-->
-<!--required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address"-->
