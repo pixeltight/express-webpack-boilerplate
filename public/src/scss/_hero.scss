@@ -11,6 +11,10 @@
     padding: 7rem 3em 4em;
   }
 
+  @media (min-width: 1024px) {
+    padding: 4em;
+  }
+
   .main__hero {
     background: rgba(252, 252, 252, 0.7);
     padding: 2rem;
