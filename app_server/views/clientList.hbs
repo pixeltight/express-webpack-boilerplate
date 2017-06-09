@@ -22,13 +22,15 @@
 
   <div class="row thumbnails__list">
   {{#each clients}}
-    <div class="col-12 col-sm-6 col-lg-4 thumbnails__container">
-      <a class="thumbnails__link" href="/clients/{{id}}">
-        <img src="http://placehold.it/250x250" class="thumbnails__item">
-        <div class="thumbnails__link--shadow">
-          <span>{{name}}</span>
-        </div>
-      </a>
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="thumbnails__container">
+        <a class="thumbnails__link" href="/clients/{{id}}">
+          <img src="http://placehold.it/500x500" class="thumbnails__item">
+          <div class="thumbnails__link--shadow">
+            <span>{{name}}</span>
+          </div>
+        </a>
+      </div>
     </div>
   {{/each}}
 </div>
