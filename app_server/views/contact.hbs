@@ -1,25 +1,36 @@
-<h1>Contact Jason Kerr</h1>
 
-<div class="error-block" style="margin-top: 60px; background: #FFE; height: 150px;">
-
-</div>
-  <form action='/contact' name="contact-form" id="contact-form" method="post">
+<!-- this houses server side errors, not sure 
+      if this can be reached with html5 validation in place
+      aside from ancient browsers? -->
+<div class="error-block" style="margin-top: 60px; background: #FFE; display: none;"></div>
+  
+  <form action='/contact' name="contact-form" id="contact-form" class="contact-form" method="post">
     <fieldset>
-      <p>
-        <label for="name">name:</label><br>
+    <ul>
+      <li>
+        <h2>Contact Jason Kerr</h2>
+        <span class="required-notification">All fields required</span>
+      </li>
+      <li>
+        <label for="name">Name:</label><br>
         <input name="user[name]" id="name" type="text" value="" required>
-      </p>
-      <p>
-        <label for="email">email:</label><br>
-        <input name="user[email]" id="email" type="text" value="" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address"> 
-      </p>
-      <p>
-        <label for="message">message:</label><br>
-        <textarea name="user[message]" id="message" value="" required title="message field cannot be blank"></textarea>
-      </p>
-      <p>
+        <i></i>
+      </li>
+      <li>
+        <label for="email">Email:</label><br>
+        <input name="user[email]" id="email" type="text" value="" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address">
+        <i></i>
+        <span class="form_hint">Proper format: <i>name@somthing.com</i></span>
+      </li>
+      <li>
+        <label for="message">Message:</label><br>
+        <textarea name="user[message]" id="message" value="" required title="message field cannot be blank" cols="40" rows="6"></textarea>
+        <i></i>
+      </li>
+      <li>
         <button name="submit" type="submit" value="send">send</button>
-      </p>
+      </li>
+      </ul>
     </fieldset>
   </form>
 
