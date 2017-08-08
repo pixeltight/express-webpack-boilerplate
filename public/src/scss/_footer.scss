@@ -1,0 +1,26 @@
+.footer {
+  background: $deep-blue;
+  color: #FFF;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0.5rem;
+
+  &::before {
+    background: $light-gray;
+    -webkit-backface-visibility: hidden;
+    top: -20px;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skewY(1.1deg);
+    transform-origin: 0;
+    z-index: 1;
+  }
+
+  .footer__text {
+
+  }
+}
