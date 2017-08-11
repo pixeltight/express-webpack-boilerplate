@@ -1,32 +1,44 @@
 [
   {
     "id": 1,
-    "name": "Triad",
+    "name": "SavvyCard",
+    "imgSrc": "/static/client-images/savvy-card.png",
+    "thumbnailSrc": "/static/thumbnails/tn-savvy-card.jpg",
     "description": "i did work for Triad!"
   },
   {
     "id": 2,
-    "name": "Rooms to Go",
+    "name": "Marlowe McNabb",
+    "imgSrc": "/static/client-images/marlowe-mcnabb.png",
+    "thumbnailSrc": "/static/thumbnails/tn-marlowe-mcnabb.jpg",
     "description": "i did work for Rooms to Go!"
   },
   {
     "id": 3,
-    "name": "Office Depot",
+    "name": "Office Depot Office Max",
+    "imgSrc": "/static/client-images/tn-od-rewards.png",
+    "thumbnailSrc": "/static/thumbnails/tn-od-rewards.jpg",
     "description": "i did work for Office Depot!"
   },
   {
     "id": 4,
-    "name": "Marlowe McNabb",
-    "description": "i did work for Marlowe McNabb!"
+    "name": "Rooms to Go iSofa",
+    "imgSrc": "/static/client-images/rtg-isofa.png",
+    "thumbnailSrc": "/static/thumbnails/tn-rtg-isofa.jpg",
+    "description": "Rooms to Go iSofa"
   },
   {
     "id": 5,
-    "name": "CastForce",
-    "description": "i did work for CastForce!"
+    "name": "WalMart Electronics Center",
+    "imgSrc": "/static/wm-electronics-center.png",
+    "thumbnailSrc": "/static/thumbnails/tn-wm-electronics-center.jpg",
+    "description": "wamlmart shit"
   },
   {
     "id": 6,
-    "name": "SavvyCard",
-    "description": "i did work for SavvyCard!"
+    "name": "E-Bay Mod Jobs",
+    "imgSrc": "/static/wm-electronics-center.png",
+    "thumbnailSrc": "/static/thumbnails/tn-ebay-mod-jobs.jpg",
+    "description": "E-Bay shit"
   }
 ]

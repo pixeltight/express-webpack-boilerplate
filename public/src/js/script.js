@@ -30,30 +30,34 @@ if (hamburger) {
 // thumbnail animated hover
 (function ($) {
   'use strict'
-  $('.thumbnails__container').each(function () {
-    $(this).hoverdir()
-  })
+  if ($('thumbnails__container')) {
+    $('.thumbnails__container').each(function () {
+      $(this).hoverdir()
+    })
+  }
 }(jQuery));
 
 // send mail if validated
 (function ($) {
   'use strict'
-  $('#contact-form').on('submit', function (e) {
-    e.preventDefault()
-    const dataString = $(this).serialize()
-    $.ajax({
-      type: 'POST',
-      url: '/contact',
-      data: dataString,
-      success: function (data) {
-        $('.error-block').empty()
-        if (data.messages) {
-          $.each(data.messages, function (key, val) {
-            $('<p>' + val.msg + '</p>').appendTo('.error-block')
-          })
+  if ($('contact-form')) {
+    $('#contact-form').on('submit', function (e) {
+      e.preventDefault()
+      const dataString = $(this).serialize()
+      $.ajax({
+        type: 'POST',
+        url: '/contact',
+        data: dataString,
+        success: function (data) {
+          $('.error-block').empty()
+          if (data.messages) {
+            $.each(data.messages, function (key, val) {
+              $('<p>' + val.msg + '</p>').appendTo('.error-block')
+            })
+          }
         }
-      }
+      })
+      return false
     })
-    return false
-  })
+  }
 }(jQuery))
