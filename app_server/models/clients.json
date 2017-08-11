@@ -16,7 +16,7 @@
   {
     "id": 3,
     "name": "Office Depot Office Max",
-    "imgSrc": "/static/client-images/tn-od-rewards.png",
+    "imgSrc": "/static/client-images/od-rewards.png",
     "thumbnailSrc": "/static/thumbnails/tn-od-rewards.jpg",
     "description": "i did work for Office Depot!"
   },
@@ -30,14 +30,14 @@
   {
     "id": 5,
     "name": "WalMart Electronics Center",
-    "imgSrc": "/static/wm-electronics-center.png",
+    "imgSrc": "/static/client-images/wm-electronics-center.png",
     "thumbnailSrc": "/static/thumbnails/tn-wm-electronics-center.jpg",
     "description": "wamlmart shit"
   },
   {
     "id": 6,
     "name": "E-Bay Mod Jobs",
-    "imgSrc": "/static/wm-electronics-center.png",
+    "imgSrc": "/static/client-images/ebay-mod-jobs.png",
     "thumbnailSrc": "/static/thumbnails/tn-ebay-mod-jobs.jpg",
     "description": "E-Bay shit"
   }
