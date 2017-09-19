@@ -11,12 +11,18 @@
   <body>
     <div class="outer-container">
       <div id="flyoutMenu" class="mobile-nav">
-          <a href="/" class="mobile-nav__link">Home</a>
-          <a href="/about" class="mobile-nav__link">About</a>
-          <a href="/contact" class="mobile-nav__link">Contact</a>
+          <a href="/" class="mobile-nav__link" title="home page">Home</a>
+          <a href="/about" class="mobile-nav__link" title="about">About</a>
+          <a href="/contact" class="mobile-nav__link" title="contact">Contact</a>
+          <div class="mobile-nav__link shareicons">
+            <a class="shareicons__item" href="https://linkedin.com/" class=""><i class="fa fa-linkedin" aria-hidden="true" title="linked in"></i></a>
+            <a class="shareicons__item" href="https://github.com/" title="github"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a class="shareicons__item" href="mailto:jkerr013@gmail.com" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          </div>
       </div>
       <header class="header fixed-top">
-      <a class="navbar-brand" href="/">PixelTight<br> <span class="navbar-brand--small">by jason kerr</span></a>
+      <a class="navbar-brand" href="/">Jason<span class="navbar-brand--blue">Kerr</span><br>
+        <span class="navbar-brand--small">web &amp; mobile development</span></a>
         <nav class="navbar">
             <a class="navbar__link" href="/">Home <span class="sr-only">(current)</span></a>
             <a class="navbar__link" href="/about/">About</a>
@@ -32,7 +38,20 @@
         {{{body}}}
       </section>
       <footer class="footer">
-        <p class="footer__text">&copy; copyright 2017</p>
+        <div class="footer__item">
+          <div class="footer__text">&copy; copyright 2017</div>
+        </div>
+        <div class="footer__item">
+          <div class="footer__icon">
+            <a href="https://linkedin.com/" class=""><i class="fa fa-linkedin" aria-hidden="true" title="linked in"></i></a>
+          </div>
+          <div class="footer__icon">
+            <a class="shareicons__item" href="https://github.com/" title="github"><i class="fa fa-github" aria-hidden="true"></i></a>
+          </div>
+          <div class="footer__icon">
+            <a class="shareicons__item" href="mailto:jkerr013@gmail.com" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          </div>
+        </div>
       </footer>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
