@@ -1,0 +1,47 @@
+.imgcontainer {
+  position: relative;
+  display: inline-block;
+  //margin: 0 0 0 2.5rem;
+
+
+  .imgcontainer__image {
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: #FFF;
+    padding: 5px;
+    display: block;
+  }
+
+  .imgcontainer__button {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    top: 25%;
+    background: $light-gray;
+    color: $deep-blue;
+    border-radius: 50%;
+    color: lighten($aqua, 10%);
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2rem;
+    border: 3px solid $deep-blue;
+    text-align: center;
+
+    &:hover {
+      color: darken($aqua, 10%);
+    }
+  }
+
+  .imgcontainer__button--prev {
+    left: 0;
+    box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.25),
+      2px 2px 2px rgba(255, 255, 255, 0.8) inset;
+  }
+
+  .imgcontainer__button--next {
+    right: 0;
+    box-shadow: 2px -2px 5px rgba(0, 0, 0, 0.25),
+      -2px 2px 2px rgba(255, 255, 255, 0.8) inset;
+  }
+}

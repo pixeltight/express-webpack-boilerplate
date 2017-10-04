@@ -1,20 +1,20 @@
 html {
   font-size: 100%;
+  height: 100%;
+  font-family: "pragmatica-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 body {
-  font: 1rem/1.5rem $base-color -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  //color: $base-color;
-  background-image: 
-  linear-gradient(-45deg, 
-    transparent 15%,  
-    rgba(0,0,0,0.1) 15%, 
-    rgba(0,0,0,0.1) 50%, 
-    transparent 50%, 
-    transparent 65%,
-    rgba(0,0,0,0.1) 65%);
-  background-size: 6px 6px;
+  color: $base-color;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  background: #FFF;
+  //background: rgba(3, 71, 176, 0.1);
+}
 
+::selection {
+  background: darken($deep-blue, 5%);
+  color: #FFF;
 }
 
 a {
@@ -34,36 +34,94 @@ textarea:focus {
   outline: 0;
 }
 
-.outer-container,
-.header {
-  max-width: 1024px;
-  
-  @media (min-width: 1024px) {
-    border: 10px solid lighten($light-gray, 10%);
-  }
-}
-
-.outer-container {
-  background: $light-gray;
-
-  @media (min-width: 1024px) {
-    margin: 0 auto;
-    border-radius: 10px;
-  }
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   z-index: 5;
   position: fixed;
-  background: $deep-blue;
-  max-width: 1024px;
+  background: darken($deep-blue, 10%);
+  padding: 1rem 1.5rem;
 
-   @media (min-width: 1024px) {
-    top: 26px;
-    border-width: 0;
-    position: static;
-    padding: 1.25rem 0;
+  @media (min-width: 576px) {
+    padding: 1rem 5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1rem 10rem;
   }
 }
+
+.pagebody {
+
+  .pagebody__section {
+    padding: 0 1.5rem;
+
+    &.pagebody__section--dark {
+      background: #FAFAFA;
+      border-bottom: 1px solid #DDD;
+      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .pagebody__header {
+      font-family: 'Ubuntu', sans-serif;
+      position: relative;
+      font-weight: 500;
+      color: #001;
+      font-size: 4rem;
+      letter-spacing: -0.25rem;
+      text-transform: lowercase;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      margin-top: 7rem;
+
+      @media (min-width: 576px) {
+        margin-top: 8rem; 
+      }
+    }
+
+    .pagebody__lede,
+    .pagebody__text {
+      font-weight: lighter;
+      line-height: 1.7rem;
+    }
+
+    .pagebody__lede {
+      font-size: 1.5em;
+      letter-spacing: 1px;
+      color: #444;
+      line-height: 2rem;
+    }
+
+    @media (min-width: 576px) {
+      padding: 0 5rem 0;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 0 10rem 0;
+    }
+
+    // &::before {
+    //   background: rgba(249, 74, 10, 0.7);
+    //   -webkit-backface-visibility: hidden;
+    //   top: 24px;
+    //   content: '';
+    //   display: block;
+    //   height: 20px;
+    //   left: 0;
+    //   position: fixed;
+    //   right: 0;
+    //   transform: skewY(-1.1deg);
+    //   transform-origin: 100%;
+
+    //   @media (min-width: 576px) {
+    //     top: 52px;
+    //   }
+
+    //   @media (min-width: 1024px) {
+    //     height: 28px;
+    //     top: 83px;
+    //   }
+    // }
+  }
+}
+

@@ -1,23 +1,28 @@
 .navbar-brand {
   font-family: 'Ubuntu', sans-serif;
-  text-transform: all-caps;
-  font-weight: 500;
-  letter-spacing: 5px;
-  line-height: 1.2rem;
-  font-size: 2.25rem;
-  padding: 0.75rem;
+  font-size: 1.75rem;
   color: #EEF;
 
+  &:hover {
+    color: #EEF;
+  }
+
+  @media (min-width: 576px) {
+    font-size: 2.25rem;
+    line-height: 1.2rem;
+  }
+  
   .navbar-brand--blue {
     color: lighten($coral, 20%);
   }
 
   .navbar-brand--small {
-    font-size: 0.75rem;
+    font-family: "pragmatica-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 0.9rem;
     color: #EEF;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-weight: normal;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 
     @media (max-width: 576px) {
       display: none;

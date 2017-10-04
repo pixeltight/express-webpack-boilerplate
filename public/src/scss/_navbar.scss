@@ -1,5 +1,5 @@
 .navbar-brand:hover {
-  color: #FFF;
+  color: #EEE;
 }
 
 .navbar {
@@ -9,7 +9,9 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+  text-transform: lowercase;
+  padding: 0 0 0 6rem;
 
   @media (min-width: 576px) {
     display: flex;
@@ -17,30 +19,11 @@
 
   .navbar__link {
     position: relative;
-    color: lighten($aqua, 20%);
+    color: lighten($aqua, 10%);
 
     &:hover {
       text-decoration: none;
-      color: $aqua;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      left: 120%;
-      top: 0;
-      width: 2px;
-      height: 24px;
-      transform: rotate(20deg);
-      border-radius: 2px;
-      background: $light-gray;
-    }
-
-    &:nth-last-of-type(1) {
-
-      &:after {
-        display: none;
-      }
+      color: lighten($aqua, 30%);
     }
   }
 }

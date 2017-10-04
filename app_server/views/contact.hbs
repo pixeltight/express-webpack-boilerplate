@@ -2,16 +2,17 @@
 <!-- this houses server side errors, not sure 
       if this can be reached with html5 validation in place
       aside from ancient browsers? -->
-<div class="error-block" style="margin-top: 60px; background: #FFE; display: none;"></div>
-  
+<div class="pagebody__section">
+  <div class="error-block" style="margin-top: 60px; background: #FFE; display: none;"></div>
+  <h2 class="pagebody__header">Contact Me</h2>
+  <p class="pagebody__text">Please use the contact form below to contact me directly as I prefer not to use Facebook or Twitter. It's merely a personal decision, I am certainly not trying to make a statement or change anyone's minds. If that were the case, I would be all over social media :)
+    <span class="required-notification">All fields required</span>
+  </p>
+</div>
+<div class="pagebody__section pagebody__section--dark">
   <form action='/contact' name="contact-form" id="contact-form" class="contact-form" method="post">
     <fieldset>
-    <ul>
-      <li>
-        <h2>Contact Jason Kerr</h2>
-        <p>Please use the contact form below to contact me directly as I prefer not to use Facebook or Twitter. It's merely a personal decision, I am certainly not trying to make a statement or change anyone's minds. If that were the case, I would be all over social media :)</p>
-        <span class="required-notification">All fields required</span>
-      </li>
+      <ul>
       <li>
         <label for="name">Name:</label><br>
         <input name="user[name]" id="name" type="text" value="" required>
@@ -34,4 +35,5 @@
       </ul>
     </fieldset>
   </form>
+</div>
 
