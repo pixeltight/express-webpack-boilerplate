@@ -3,17 +3,23 @@ const credentials = require('../../credentials')
 
 /* GET home page. */
 module.exports.about = (req, res) => {
-  res.render('about', { title: 'About Jason Kerr' })
+  res.render('about', {
+    title: 'About Jason Kerr',
+    active_about: true
+  })
 }
 
 module.exports.contact = (req, res) => {
-  res.render('contact', { title: 'Contact Jason Kerr' })
+  res.render('contact', { 
+    title: 'Contact Jason Kerr',
+    active_contact: true
+  })
 }
 
 module.exports.sendMail = (req, res) => {
-  // console.log(req.body.user.name)
-  // console.log(req.body.user.email)
-  // console.log(req.body.user.message)
+  console.log(req.body.user.name)
+  console.log(req.body.user.email)
+  console.log(req.body.user.message)
 
   req.checkBody('user.name', 'Name is a required field').notEmpty()
   req.checkBody('user.email', 'Please enter a valid email address').isEmail()
@@ -28,28 +34,28 @@ module.exports.sendMail = (req, res) => {
   } else {
     res.render('contact', { title: 'PixelTight - Contact is good!' })
   }
-  // let transporter = nodemailer.createTransport({
-  //   service: 'gmail',
-  //   auth: {
-  //     user: credentials.gmail.user,
-  //     pass: credentials.gmail.password
-  //   }
-  // })
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: credentials.gmail.user,
+      pass: credentials.gmail.password
+    }
+  })
 
-  // let mailOptions = {
-  //   from: req.body.user.name + '&lt;' + req.body.user.email + '&gt;',
-  //   to: 'jkerr013@gmail.com',
-  //   subject: 'PixelTight Form Response',
-  //   text: req.body.user.message
-  // }
+  let mailOptions = {
+    from: req.body.user.name + '&lt;' + req.body.user.email + '&gt;',
+    to: 'jkerr013@gmail.com',
+    subject: 'PixelTight Form Response',
+    text: req.body.user.message
+  }
 
-  // transporter.sendMail(mailOptions, (error, info) => {
-  //   if (error) {
-  //     res.render('contact', { title: 'PixelTight - Contact', msg: 'Error occurred. Message not sent.', err: true })
-  //     return console.log(error)
-  //   } else {
-  //     res.render('contact', { title: 'PixelTight - Contact', msg: 'Message sent! Thank you.', err: false })
-  //     return console.log('Message %s sent %s', info.messageId, info.response)
-  //   }
-  // })
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      res.render('contact', { title: 'PixelTight - Contact', msg: 'Error occurred. Message not sent.', err: true })
+      return console.log(error)
+    } else {
+      res.render('contact', { title: 'PixelTight - Contact', msg: 'Message sent! Thank you.', err: false })
+      return console.log('Message %s sent %s', info.messageId, info.response)
+    }
+  })
 }

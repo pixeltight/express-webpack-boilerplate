@@ -2,12 +2,21 @@
 	color: #FFF;
 	padding: 1.5rem 1rem 0.75rem;
 	background: $coral;
+
+  @media (min-width: 576px) {
+    padding: 1.5rem 5rem 0.75rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1.5rem 10rem 0.75rem;
+  }
 }
 
 .thumbnails {
   padding: 1rem;
   position: relative;
   z-index: 1;
+  background: $light-gray;
 
   .thumbnails__header {
     font-family: 'Ubuntu', sans-serif;
@@ -49,19 +58,41 @@
   .thumbnails__link {
     overflow: hidden;
     max-height: 250px;
+
+    &:hover {
+      .thumbnails__link--shadow {
+        transform: translateY(0);
+      }
+    }
   }
 
   .thumbnails__item {
     max-width: 100%;
-    animation: fadein .4s;
+    animation: fadein 0.4s;
   }
 
   .thumbnails__link--shadow {
     position: absolute;
     background: rgba(75, 75, 75, 0.7);
+    background: linear-gradient(transparent 0%, rgba(lighten($blue-black, 27%), 0.4) 32%, rgba(lighten($blue-black, 10%), 1) 100%);
     width: 100%;
-    height: 100%;
+    height: 32%;
     z-index: 4;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.2, 0.3, 0.25, 0.9);
+
+    @media (min-width: 576px) {
+      transform: translateY(100%);
+    }
+
+    span {
+      padding: 2.4rem 0 0 0.5rem;
+      display: inline-block;
+      color: #FFF;
+      font-size: 1.25rem;
+    }
   }
 
   &::before {

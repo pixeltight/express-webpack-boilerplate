@@ -6,26 +6,27 @@
     <title>{{title}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="/static/modernizr.custom.97074.js"></script>
   </head>
   <body>
     <div id="flyoutMenu" class="mobile-nav">
         <a href="/" class="mobile-nav__link" title="home page">Home</a>
+        <a href="/" class="mobile-nav__link" title="portfolio">Portfolio</a>
         <a href="/about" class="mobile-nav__link" title="about">About</a>
         <a href="/contact" class="mobile-nav__link" title="contact">Contact</a>
         <div class="mobile-nav__link shareicons">
           <a class="shareicons__item" href="https://linkedin.com/" class=""><i class="fa fa-linkedin" aria-hidden="true" title="linked in"></i></a>
           <a class="shareicons__item" href="https://github.com/" title="github"><i class="fa fa-github" aria-hidden="true"></i></a>
-          <a class="shareicons__item" href="mailto:jkerr013@gmail.com" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          <a class="shareicons__item" href="mailto:jkerr013@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
         </div>
     </div>
     <header class="header fixed-top">
     <a class="navbar-brand" href="/">Jason<span class="navbar-brand--blue">Kerr</span><br>
       <span class="navbar-brand--small">frontend development</span></a>
       <nav class="navbar">
-          <a class="navbar__link" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="navbar__link" href="/about/">About</a>
-          <a class="navbar__link" href="/contact/">Contact</a>
+          <a class="navbar__link {{#if active_home}}active{{/if}}" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="navbar__link {{#if active_portfolio}}active{{/if}}" href="/#portfolio">Portfolio</a>
+          <a class="navbar__link {{#if active_about}}active{{/if}}" href="/about/">About</a>
+          <a class="navbar__link {{#if active_contact}}active{{/if}}" href="/contact/">Contact</a>
       </nav>
       <button id="burgerToggle" class="hamburger hamburger--boring" type="button">
         <span class="hamburger-box">
@@ -48,13 +49,12 @@
           <a class="shareicons__item" href="https://github.com/" title="github"><i class="fa fa-github" aria-hidden="true"></i></a>
         </div>
         <div class="footer__icon">
-          <a class="shareicons__item" href="mailto:jkerr013@gmail.com" title="email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          <a class="shareicons__item" href="mailto:jkerr013@gmail.com" title="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
         </div>
       </div>
     </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="/static/svg.brushstroke.min.js"></script>
     <script src="/dist/bundle.js" defer></script>
   </body>
 </html>

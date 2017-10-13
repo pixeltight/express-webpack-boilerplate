@@ -5,21 +5,30 @@
 .navbar {
   display: none;
   flex-direction: row;
-  width: 302px;
   justify-content: space-between;
+  flex-content: flex-end;
   align-items: center;
+  align-content: flex-end;
   position: relative;
   font-size: 1.1rem;
   text-transform: lowercase;
-  padding: 0 0 0 6rem;
+  flex-basis: 55%;
 
-  @media (min-width: 576px) {
+  @media (min-width: 746px) {
     display: flex;
+  }
+
+  @media (min-width: 1146px) {
+    flex-basis: 40%;
   }
 
   .navbar__link {
     position: relative;
     color: lighten($aqua, 10%);
+
+    &.active {
+      color: lighten($aqua, 30%);
+    }
 
     &:hover {
       text-decoration: none;

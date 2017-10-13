@@ -4,7 +4,8 @@ const clients = require('../models/clients.json')
 module.exports.clientList = (req, res) => {
   res.render('clientList', {
     title: 'Jason Kerr Homepage',
-    clients: clients
+    active_home: true,
+    clients
   })
 }
 
@@ -14,8 +15,8 @@ module.exports.clientInfo = (req, res) => {
   let startPage = 1
   let endPage = 6
   let currentPage = parseInt(req.params.id)
-
   let prevPage = currentPage - 1
+  
   if (prevPage < startPage) {
     prevPage = endPage
   }
@@ -26,9 +27,12 @@ module.exports.clientInfo = (req, res) => {
   res.render('clientInfo', {
     title: 'Clients: ' + clients[arrIndex].name,
     client: clients.find(key => {
-      return key.id === +req.params.id
+      return key.id === parseInt(req.params.id)
     }),
+    active_portfolio: true,
     prevPage: prevPage,
-    nextPage: nextPage
+    nextPage: nextPage,
+    index: currentPage,
+    clients
   })
 }

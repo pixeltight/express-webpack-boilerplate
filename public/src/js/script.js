@@ -2,8 +2,9 @@ import '../scss/style.scss'
 import './jquery.hoverdir.js'
 
 // flyout menu
-let hamburger = document.querySelector('#burgerToggle')
-let flyoutMenu = document.querySelector('#flyoutMenu')
+let hamburger = document.getElementById('burgerToggle')
+let flyoutMenu = document.getElementById('flyoutMenu')
+let indexdots = document.getElementById('indexdots')
 
 function showMenu () {
   flyoutMenu.classList.add('show')
@@ -27,16 +28,6 @@ if (hamburger) {
   }, false)
 }
 
-// thumbnail animated hover
-(function ($) {
-  'use strict'
-  if ($('thumbnails__container')) {
-    $('.thumbnails__container').each(function () {
-      $(this).hoverdir()
-    })
-  }
-}(jQuery));
-
 // send mail if validated
 (function ($) {
   'use strict'
@@ -44,6 +35,7 @@ if (hamburger) {
     $('#contact-form').on('submit', function (e) {
       e.preventDefault()
       const dataString = $(this).serialize()
+      console.log(dataString)
       $.ajax({
         type: 'POST',
         url: '/contact',
@@ -61,3 +53,10 @@ if (hamburger) {
     })
   }
 }(jQuery))
+
+if (indexdots) {
+  let indexLinks = document.querySelectorAll('a.indexdots__link');
+  let indexLink = (document.getElementById('index').value) - 1;
+  let activeLink = indexLinks[indexLink];
+  activeLink.classList.add('active');
+}

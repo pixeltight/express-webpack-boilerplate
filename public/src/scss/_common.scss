@@ -27,7 +27,6 @@ a {
   }
 }
 
-/* hate that ugly outline in Chrome */
 button:focus,
 input:focus,
 textarea:focus {
@@ -67,12 +66,32 @@ textarea:focus {
       position: relative;
       font-weight: 500;
       color: #001;
-      font-size: 4rem;
+      font-size: 3.5rem;
       letter-spacing: -0.25rem;
       text-transform: lowercase;
       margin-bottom: 0.75rem;
       overflow: hidden;
       margin-top: 7rem;
+
+      @media (min-width: 746px) {
+        font-size: 4rem;
+      }
+
+      &.pagebody__header--client {
+        font-family: "pragmatica-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        text-transform: none;
+        font-size: 1.8rem;
+        font-weight: lighter;
+        letter-spacing: 0;
+        font-weight: normal;
+        border-bottom: 1px solid #DDD;
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.2rem;
+
+        @media (min-width: 668px) {
+          font-size: 2.75rem;
+        }
+      }
 
       @media (min-width: 576px) {
         margin-top: 8rem; 

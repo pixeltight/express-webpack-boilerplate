@@ -1,5 +1,9 @@
 .contact-form {
-  padding: 4.5rem 0;
+  padding: 3.5rem 0;
+
+  .contact-form__header {
+    font-weight: normal;
+  }
 
   .form_hint {
     font-size: 0.7rem;
@@ -17,7 +21,7 @@
     padding: 0;
 
     li {
-      padding: 12px;
+      padding: 12px 12px 12px 0;
       position: relative;
 
       &:first-of-type {
@@ -32,6 +36,7 @@
         margin-top: 3px;
         display: inline-block;
         float: left;
+        font-weight: lighter;
       }
 
       input, textarea {
@@ -121,7 +126,6 @@
 
       button {
         cursor: pointer;
-        margin-left: 150px;
         background-color: #68b12f;
         background: linear-gradient(top, #68b12f, #50911e);
         border: 1px solid #509111;
