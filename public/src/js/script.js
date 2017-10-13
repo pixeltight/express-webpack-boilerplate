@@ -1,5 +1,4 @@
 import '../scss/style.scss'
-import './jquery.hoverdir.js'
 
 // flyout menu
 let hamburger = document.getElementById('burgerToggle')

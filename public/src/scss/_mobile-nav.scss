@@ -19,6 +19,7 @@
   }
 
   .mobile-nav__link {
+    color: lighten($aqua, 30%);
     text-align: center;
     font-size: 1.3215rem;
     letter-spacing: 5px;
@@ -33,7 +34,7 @@
                 transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     &:hover {
-      color: lighten($aqua, 30%);
+      color: $aqua;
     }
 
     @media (min-width: 568px) and (orientation: landscape) {
@@ -50,7 +51,7 @@
     font-style: normal;
 
     .shareicons__item {
-      color: $light-gray;
+      color: lighten($coral, 8%);
       border-radius: 50%;
       width: 1.875rem;
       height: 1.875rem;
@@ -58,7 +59,7 @@
     }
   }
 
-  &.show {
+  .show {
     opacity: 1;
     pointer-events: all;
 
