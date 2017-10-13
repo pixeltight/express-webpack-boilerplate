@@ -47,6 +47,12 @@ module.exports = {
           use: [
             'css-loader',
             {
+              loader: 'sass-loader',
+              options: {
+                precision: 8
+              }
+            },
+            {
               loader: 'postcss-loader',
               options: {
                 plugins: () => ([
@@ -54,12 +60,6 @@ module.exports = {
                 ])
               }
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                precision: 8
-              }
-            }
           ]
         })
       }
@@ -68,7 +68,11 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('styles.css'),
     new PurifyCssPlugin({
-      paths: glob.sync(path.join(__dirname, './app_server/views/**/*.hbs'))
+      paths: glob.sync(path.join(__dirname, './app_server/views/**/*.hbs')),
+      purifyOptions: {
+        minify: true,
+        whitelist: ['*mobile-nav.show*']
+      }
     })
   ]
 }
