@@ -11,7 +11,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:pixeltight/express-webpack-boilerplate.git',
       path: '/home/ubuntu/express-webpack-boilerplate',
-      'post-deploy': 'pm2 startOrRestart ecosystem.config.js'
+      'post-deploy': 'yarn && pm2 startOrRestart ecosystem.config.js'
     }
   }
 }
