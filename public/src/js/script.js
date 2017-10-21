@@ -53,9 +53,11 @@ if (hamburger) {
   }
 }(jQuery))
 
-if (indexdots) {
-  let indexLinks = document.querySelectorAll('a.indexdots__link');
-  let indexLink = (document.getElementById('index').value) - 1;
-  let activeLink = indexLinks[indexLink];
-  activeLink.classList.add('active');
-}
+document.addEventListener('DOMContentLoaded', function () {
+  if (indexdots) {
+    let indexLinks = document.querySelectorAll('a.indexdots__link')
+    let indexLink = (document.getElementById('index').value) - 1
+    let activeLink = indexLinks[indexLink]
+    activeLink.classList.add('active')
+  }
+})

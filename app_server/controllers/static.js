@@ -10,7 +10,7 @@ module.exports.about = (req, res) => {
 }
 
 module.exports.contact = (req, res) => {
-  res.render('contact', { 
+  res.render('contact', {
     title: 'Contact Jason Kerr',
     active_contact: true
   })
@@ -32,8 +32,9 @@ module.exports.sendMail = (req, res) => {
     // res.render('contact', { title: 'PixelTight - Contact Error!', messages: errors})
     res.send({ messages: errors})
   } else {
-    res.render('contact', { title: 'PixelTight - Contact is good!' })
+    res.render('contact', { title: 'PixelTight - Contact sucess!' })
   }
+
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

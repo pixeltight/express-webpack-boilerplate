@@ -1,10 +1,10 @@
 .mobile-nav {
-  height: 100%;
   background-color: darken($deep-blue, 7%);
   position: fixed;
-  top: 0;
+  top: 4.1rem;
   left: 0;
   right: 0;
+  bottom: 0;
   opacity: 0;
   transition: opacity 0.4s linear;
   display: flex;

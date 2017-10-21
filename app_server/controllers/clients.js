@@ -16,7 +16,7 @@ module.exports.clientInfo = (req, res) => {
   let endPage = 6
   let currentPage = parseInt(req.params.id)
   let prevPage = currentPage - 1
-  
+
   if (prevPage < startPage) {
     prevPage = endPage
   }
