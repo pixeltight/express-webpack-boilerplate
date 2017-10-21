@@ -1,7 +1,7 @@
 <div class="pagebody__section">
   <input type="hidden" id="index" value={{index}}>
   <h2 class="pagebody__header pagebody__header--client">{{client.name}}</h2>
-  <p class="client-subhead">Initiative Name</p>
+  <p class="client-subhead">{{client.initiative}}</p>
   <div class="indexdots" id="indexdots">
     {{#each clients}}
     <a class="indexdots__link" href="/clients/{{id}}"><span>{{id}}</span></a>
@@ -11,5 +11,8 @@
     <img src="{{client.imgSrc}}" class="imgcontainer__image" />
     <a href="/clients/{{prevPage}}" class="imgcontainer__button imgcontainer__button--prev">&#10094;</a>
     <a href="/clients/{{nextPage}}" class="imgcontainer__button imgcontainer__button--next">&#10095;</a>
+  </div>
+  <div class="clientdescription">
+    {{{client.description}}}
   </div>
 </div>
