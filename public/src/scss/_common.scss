@@ -65,13 +65,13 @@ textarea:focus {
       font-family: 'Ubuntu', sans-serif;
       position: relative;
       font-weight: 500;
-      color: #001;
-      font-size: 3.5rem;
+      color: #002;
+      font-size: 3rem;
       letter-spacing: -0.25rem;
       text-transform: lowercase;
       margin-bottom: 0.75rem;
       overflow: hidden;
-      margin-top: 7rem;
+      margin: 6rem 0 0.75rem;
 
       @media (min-width: 746px) {
         font-size: 4rem;
@@ -105,7 +105,7 @@ textarea:focus {
     }
 
     .pagebody__lede {
-      font-size: 1.5em;
+      font-size: 1.6em;
       letter-spacing: 1px;
       color: #444;
       line-height: 2rem;
