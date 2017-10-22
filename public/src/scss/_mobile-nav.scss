@@ -1,7 +1,7 @@
 .mobile-nav {
   background-color: darken($deep-blue, 7%);
   position: fixed;
-  top: 4.1rem;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -13,6 +13,7 @@
   align-content: center;
   pointer-events: none;
   z-index: 4;
+  padding-top: 40px;
 
   @media (min-width: 746px) {
     display: none;
