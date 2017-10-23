@@ -4,6 +4,8 @@ import '../scss/style.scss'
 let hamburger = document.getElementById('burgerToggle')
 let flyoutMenu = document.getElementById('flyoutMenu')
 let indexdots = document.getElementById('indexdots')
+let portfolio = document.getElementById('portfolio')
+let portfolioLink = document.getElementById('portfolioLink')
 
 function showMenu () {
   flyoutMenu.classList.add('show')
@@ -25,6 +27,23 @@ if (hamburger) {
       hideMenu()
     }
   }, false)
+}
+
+// if hitting hashed link from homepage
+// close mobile nav
+
+if (portfolio) {
+  portfolioLink.addEventListener('click', () => {
+    hamburger.classList.remove('is-active')
+    hideMenu()
+  }, false)
+}
+
+if (indexdots) {
+  let indexLinks = document.querySelectorAll('a.indexdots__link')
+  let indexLink = (document.getElementById('index').value) - 1
+  let activeLink = indexLinks[indexLink]
+  activeLink.classList.add('active')
 }
 
 // send mail if validated
@@ -52,12 +71,3 @@ if (hamburger) {
     })
   }
 }(jQuery))
-
-document.addEventListener('DOMContentLoaded', function () {
-  if (indexdots) {
-    let indexLinks = document.querySelectorAll('a.indexdots__link')
-    let indexLink = (document.getElementById('index').value) - 1
-    let activeLink = indexLinks[indexLink]
-    activeLink.classList.add('active')
-  }
-})

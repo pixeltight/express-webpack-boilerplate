@@ -13,7 +13,7 @@ body {
 }
 
 ::selection {
-  background: darken($deep-blue, 5%);
+  background: #071b2d;
   color: #FFF;
 }
 
@@ -42,6 +42,10 @@ textarea:focus {
   padding: 0.75rem 1.5rem;
 
   @media (min-width: 576px) {
+    padding: 1rem 1.5rem;
+  }
+  
+  @media (min-width: 668px) {
     padding: 1rem 5rem;
   }
 
@@ -51,96 +55,74 @@ textarea:focus {
 }
 
 .pagebody {
+  
+}
 
-  .pagebody__section {
-    padding: 0 1.5rem;
+.pagebody__section {
+  padding: 0 1.5rem;
 
-    &.pagebody__section--dark {
-      background: #FAFAFA;
-      border-bottom: 1px solid #DDD;
-      box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-    }
+  //@media (min-width: 576px) {
+  @media (min-width: 668px) {
+    padding: 0 5rem 0;
+  }
 
-    .pagebody__header {
-      font-family: 'Ubuntu', sans-serif;
-      position: relative;
-      font-weight: 500;
-      color: #002;
-      font-size: 3rem;
-      letter-spacing: -0.25rem;
-      text-transform: lowercase;
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-      margin: 6rem 0 0.75rem;
+  @media (min-width: 1024px) {
+    padding: 0 10rem 0;
+  }
+}
+    
+.pagebody__section--dark {
+  background: #FAFAFA;
+  border-bottom: 1px solid #DDD;
+  box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
 
-      @media (min-width: 746px) {
-        font-size: 4rem;
-      }
+.pagebody__header {
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  font-weight: 500;
+  color: #002;
+  font-size: 3rem;
+  letter-spacing: -0.25rem;
+  text-transform: lowercase;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  margin: 6rem 0 0.75rem;
 
-      &.pagebody__header--client {
-        font-family: "pragmatica-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        text-transform: none;
-        font-size: 1.8rem;
-        font-weight: lighter;
-        letter-spacing: 0;
-        font-weight: normal;
-        border-bottom: 1px solid #DDD;
-        padding-bottom: 0.75rem;
-        margin-bottom: 0.2rem;
-
-        @media (min-width: 668px) {
-          font-size: 2.75rem;
-        }
-      }
-
-      @media (min-width: 576px) {
-        margin-top: 8rem; 
-      }
-    }
-
-    .pagebody__lede,
-    .pagebody__text {
-      font-weight: lighter;
-      line-height: 1.7rem;
-    }
-
-    .pagebody__lede {
-      font-size: 1.6em;
-      letter-spacing: 1px;
-      color: #444;
-      line-height: 2rem;
-    }
-
-    @media (min-width: 576px) {
-      padding: 0 5rem 0;
-    }
-
-    @media (min-width: 1024px) {
-      padding: 0 10rem 0;
-    }
-
-    // &::before {
-    //   background: rgba(249, 74, 10, 0.7);
-    //   -webkit-backface-visibility: hidden;
-    //   top: 24px;
-    //   content: '';
-    //   display: block;
-    //   height: 20px;
-    //   left: 0;
-    //   position: fixed;
-    //   right: 0;
-    //   transform: skewY(-1.1deg);
-    //   transform-origin: 100%;
-
-    //   @media (min-width: 576px) {
-    //     top: 52px;
-    //   }
-
-    //   @media (min-width: 1024px) {
-    //     height: 28px;
-    //     top: 83px;
-    //   }
-    // }
+  @media (min-width: 746px) {
+    font-size: 4rem;
   }
 }
 
+.pagebody__header--client {
+  font-family: "pragmatica-web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-transform: none;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  letter-spacing: 0;
+  font-weight: normal;
+  border-bottom: 1px solid #DDD;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.2rem;
+
+  @media (min-width: 668px) {
+    font-size: 2.75rem;
+  }
+
+  @media (min-width: 576px) {
+    margin-top: 8rem; 
+  }
+}
+
+.pagebody__lede,
+.pagebody__text {
+  font-weight: lighter;
+  line-height: 1.7rem;
+}
+
+.pagebody__lede {
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  color: #444;
+  line-height: 2rem;
+}

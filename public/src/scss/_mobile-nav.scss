@@ -13,7 +13,7 @@
   align-content: center;
   pointer-events: none;
   z-index: 4;
-  padding-top: calc(66px + 1rem);
+  padding-top: 66px;
 
   @media (min-width: 746px) {
     display: none;
@@ -74,14 +74,14 @@
 .shareicons {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   font-size: 1.5rem;
-  //padding: 40px 80px;
   font-style: normal;
 }
 
 .shareicons__item {
   color: lighten($coral, 8%);
+  margin: 0 0.5rem;
   border-radius: 50%;
   width: 1.875rem;
   height: 1.875rem;
