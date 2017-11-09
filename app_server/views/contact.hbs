@@ -1,38 +1,36 @@
-
-<!-- this houses server side errors, not sure 
-      if this can be reached with html5 validation in place
-      aside from ancient browsers? -->
 <div class="pagebody__section">
 
-  <div class="error-block" style="margin-top: 60px; background: #FFE; display: none;"></div>
   <h2 class="pagebody__header">Contact Me</h2>
   <p class="pagebody__text">Please use the contact form below to contact me directly as I prefer not to use Facebook or Twitter. It's merely a personal decision, I am certainly not trying to make a statement or change anyone's minds. If that were the case, I would be all over social media :)
     <span class="required-notification">All fields required</span>
   </p>
 </div>
 <div class="pagebody__section pagebody__section--dark">
+  <!--empty container for errors -->
+
   <form action='/contact' name="contact-form" id="contact-form" class="contact-form" method="post">
     <h3 class="contact-form__header">Send me an email</h3>
     <fieldset>
-      <ul>
-      <li>
-        <label for="name">Name:</label><br>
-        <input name="user[name]" id="name" type="text" value="" required>
+      <ul class="form-fields">
+      <li class="form-fields__item">
+        <label class="form-fields__label" for="name">Name:</label><br>
+        <input name="user[name]" class="form-fields__input" id="name" type="text" maxlength="40">
         <i></i>
       </li>
-      <li>
-        <label for="email">Email:</label><br>
-        <input name="user[email]" id="email" type="text" value="" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address">
+      <li class="form-fields__item">
+        <label class="form-fields__label" for="email">Email:</label><br>
+        <input name="user[email]" class="form-fields__input" id="email" type="text" maxlength="40">
         <i></i>
-        <span class="form_hint">Proper format: <i>name@somthing.com</i></span>
+        <span class="form-hint">Proper format: <i>name@somthing.com</i></span>
       </li>
-      <li>
-        <label for="message">Message:</label><br>
-        <textarea name="user[message]" id="message" value="" required title="message field cannot be blank" cols="40" rows="6"></textarea>
+      <li class="form-fields__item">
+        <label class="form-fields__label" for="message">Message:</label><br>
+        <textarea class="form-fields__textarea" name="user[message]" id="message" maxlength="240" cols="40" rows="6"></textarea>
         <i></i>
       </li>
-      <li>
-        <button name="submit" type="submit" value="send">send email</button>
+      <ul class="error-block"></ul>
+      <li class="form-fields__item">
+        <button class="form-fields__button" name="submit" type="submit" value="send">send email</button>
       </li>
       </ul>
     </fieldset>

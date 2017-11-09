@@ -53,17 +53,23 @@ if (indexdots) {
     $('#contact-form').on('submit', function (e) {
       e.preventDefault()
       const dataString = $(this).serialize()
-      console.log(dataString)
+      $('.form-fields__button').text('submitting...')
       $.ajax({
         type: 'POST',
         url: '/contact',
-        data: dataString,
+        data: dataString, 
         success: function (data) {
-          $('.error-block').empty()
-          if (data.messages) {
-            $.each(data.messages, function (key, val) {
-              $('<p>' + val.msg + '</p>').appendTo('.error-block')
+          $('.form-fields__button').text('send email')
+          $('.error-block').empty().removeClass('visible');
+          if(data.errorMsg) {
+            $('.error-block').addClass('visible');
+            $.each(data.errorMsg, function (key, val) {
+              $('<li class=\'error-block__item\'><i class=\'fa fa-warning\' aria-hidden=\'true\'></i>' 
+                + val.msg + '</li>').appendTo('.error-block')
             })
+          } else {
+            $('.form-fields__button').text('success')
+            $('#contact-form').fadeOut('slow')
           }
         }
       })

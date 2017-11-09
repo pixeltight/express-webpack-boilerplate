@@ -17,25 +17,8 @@ module.exports.contact = (req, res) => {
 }
 
 module.exports.sendMail = (req, res) => {
-  console.log(req.body.user.name)
-  console.log(req.body.user.email)
-  console.log(req.body.user.message)
 
-  req.checkBody('user.name', 'Name is a required field').notEmpty()
-  req.checkBody('user.email', 'Please enter a valid email address').isEmail()
-  req.checkBody('user.message', 'Please enter a message').notEmpty()
-
-  var errors = req.validationErrors()
-  console.log(errors)
-
-  if (errors) {
-    // res.render('contact', { title: 'PixelTight - Contact Error!', messages: errors})
-    res.send({ messages: errors})
-  } else {
-    res.render('contact', { title: 'PixelTight - Contact sucess!' })
-  }
-
-  let transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
       user: credentials.gmail.user,
@@ -43,20 +26,40 @@ module.exports.sendMail = (req, res) => {
     }
   })
 
+  req.checkBody('user.name', 'Name is a required field').notEmpty()
+  req.checkBody('user.email', 'Please enter a valid email address').isEmail()
+  req.checkBody('user.message', 'Please enter a message').notEmpty()
+
+  let suser = req.sanitizeBody('user.name').escape().trim();
+  let semail = req.sanitizeBody('user.email').escape().trim();
+  let smessage = req.sanitizeBody('user.message').escape().trim();
+
   let mailOptions = {
-    from: req.body.user.name + '&lt;' + req.body.user.email + '&gt;',
+    from: req.body.user.email,
     to: 'jkerr013@gmail.com',
     subject: 'PixelTight Form Response',
-    text: req.body.user.message
+    text: suser + '\r\n' + semail + '\r\n' + smessage
   }
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      res.render('contact', { title: 'PixelTight - Contact', msg: 'Error occurred. Message not sent.', err: true })
-      return console.log(error)
-    } else {
-      res.render('contact', { title: 'PixelTight - Contact', msg: 'Message sent! Thank you.', err: false })
-      return console.log('Message %s sent %s', info.messageId, info.response)
-    }
-  })
+
+
+  var errors = req.validationErrors()
+  if(errors) {
+    console.log(`Validation Errors: ${JSON.stringify(errors)}`)
+  }
+
+  if (errors) {
+    res.send({ errorMsg: errors })
+  } else {
+      transporter.sendMail(mailOptions, (error, info) => {
+      console.log('this eventuality')
+      if (error) {
+        res.send({ msg: 'Error occurred. Message not sent.', err: true })
+        console.log(`static.js line 56: JSON.stringify(${error})`)
+      } else {
+        res.send({ msg: 'Message sent! Thank you.', err: false })
+        console.log('Message %s sent %s', info.messageId, info.response)
+      }
+    })
+  }
 }
