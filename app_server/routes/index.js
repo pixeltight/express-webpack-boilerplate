@@ -25,6 +25,7 @@ router.get('/clients/:id', ctrlClients.clientInfo)
 router.get('/about', ctrlStatic.about)
 
 router.get('/contact', ctrlStatic.contact)
+
 /* sendMail */
 router.use(bodyParser.urlencoded({
   extended: true

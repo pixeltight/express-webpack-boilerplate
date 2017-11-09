@@ -1,31 +1,42 @@
 <div class="pagebody__section">
 
   <h2 class="pagebody__header">Contact Me</h2>
-  <p class="pagebody__text">Please use the contact form below to contact me directly as I prefer not to use Facebook or Twitter. It's merely a personal decision, I am certainly not trying to make a statement or change anyone's minds. If that were the case, I would be all over social media :)
-    <span class="required-notification">All fields required</span>
+  <p class="pagebody__lede">
+    Please feel free to contact me - project work, questions about code, NBA chit-chat? Drop me a line!
   </p>
+  <ul class="contact-share">
+    <li class="contact-share__item">
+      <a href="https://www.linkedin.com/in/jason-kerr-80623959/" class="contact-share__linkedin" title="linked in">
+        <i class="fa fa-linkedin" aria-hidden="true"></i>Connect on LinkedIn
+      </a>
+    </li>
+    <li class="contact-share__item">
+      <a class="contact-share__github" href="https://github.com/pixeltight" title="github">
+        <i class="fa fa-github" aria-hidden="true"></i>Connect on Github
+      </a>
+    </li>
+  </ul>
 </div>
 <div class="pagebody__section pagebody__section--dark">
-  <!--empty container for errors -->
-
   <form action='/contact' name="contact-form" id="contact-form" class="contact-form" method="post">
     <h3 class="contact-form__header">Send me an email</h3>
     <fieldset>
+      <span class="required-notification">All fields required</span>
       <ul class="form-fields">
       <li class="form-fields__item">
         <label class="form-fields__label" for="name">Name:</label><br>
-        <input name="user[name]" class="form-fields__input" id="name" type="text" maxlength="40">
+        <input name="user[name]" class="form-fields__input" id="name" type="text" maxlength="40" required>
         <i></i>
       </li>
       <li class="form-fields__item">
         <label class="form-fields__label" for="email">Email:</label><br>
-        <input name="user[email]" class="form-fields__input" id="email" type="text" maxlength="40">
+        <input name="user[email]" class="form-fields__input" id="email" type="text" maxlength="40" required pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="please enter a valid email address">
         <i></i>
         <span class="form-hint">Proper format: <i>name@somthing.com</i></span>
       </li>
       <li class="form-fields__item">
         <label class="form-fields__label" for="message">Message:</label><br>
-        <textarea class="form-fields__textarea" name="user[message]" id="message" maxlength="240" cols="40" rows="6"></textarea>
+        <textarea class="form-fields__textarea" name="user[message]" id="message" maxlength="240" cols="40" rows="6" required title="message field cannot be blank"></textarea>
         <i></i>
       </li>
       <ul class="error-block"></ul>

@@ -41,18 +41,12 @@ module.exports.sendMail = (req, res) => {
     text: suser + '\r\n' + semail + '\r\n' + smessage
   }
 
-
-
   var errors = req.validationErrors()
-  if(errors) {
-    console.log(`Validation Errors: ${JSON.stringify(errors)}`)
-  }
 
   if (errors) {
     res.send({ errorMsg: errors })
   } else {
       transporter.sendMail(mailOptions, (error, info) => {
-      console.log('this eventuality')
       if (error) {
         res.send({ msg: 'Error occurred. Message not sent.', err: true })
         console.log(`static.js line 56: JSON.stringify(${error})`)

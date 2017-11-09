@@ -1,5 +1,43 @@
+.contact-share {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.contact-share__item {
+  margin-bottom: 1rem;
+
+  & i {
+    margin-right: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3rem;
+    font-size: 2rem;
+  }
+}
+
+.contact-share__linkedin {
+  color: #0275b5;
+
+  & i {
+    color: #FFF;
+    background: #0275B5;
+  }
+}
+
+.contact-share__github {
+  color: #4183C4;
+
+  & i {
+    color: #FFF;
+    background: #0e3559;
+  }
+}
+
 .contact-form {
-  padding: 3.5rem 0;
+  padding: 2rem 0;
 }
   
 .contact-form__header {
