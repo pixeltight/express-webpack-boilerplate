@@ -32,7 +32,7 @@ module.exports.sendMail = (req, res) => {
   let smessage = req.sanitizeBody('user.message').escape().trim();
 
   let mailOptions = {
-    from: 'jkerr@pixeltight.com',
+    from: 'Jason Kerr <jkerr@pixeltight.com>',
     to: 'jkerr@pixeltight.com',
     subject: 'PixelTight Form Response',
     text: suser + '\r\n' + semail + '\r\n' + smessage
@@ -49,7 +49,8 @@ module.exports.sendMail = (req, res) => {
         console.log(`static.js line 56: JSON.stringify(${error})`)
       } else {
         res.send({ msg: 'Message sent! Thank you.', err: false })
-        console.log('Message %s sent %s', info.messageId, info.response)
+        //console.log('Message %s sent %s', info.messageId, info.response)
+        console.log(`MESSAGE SENT: ${info}`)
       }
     })
   }
