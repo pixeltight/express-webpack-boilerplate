@@ -32,8 +32,8 @@ module.exports.sendMail = (req, res) => {
   let smessage = req.sanitizeBody('user.message').escape().trim();
 
   let mailOptions = {
-    from: 'Jason Kerr <jkerr@pixeltight.com>',
-    to: 'jkerr@pixeltight.com',
+    from: 'Jason Kerr <jason@pixeltight.com>',
+    to: 'jason@pixeltight.com',
     subject: 'PixelTight Form Response',
     text: suser + '\r\n' + semail + '\r\n' + smessage
   }
