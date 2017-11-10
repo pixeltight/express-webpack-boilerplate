@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer')
+const ses = require('nodemailer-ses-transport')
 const credentials = require('../../credentials')
 
 /* GET home page. */
@@ -17,14 +18,10 @@ module.exports.contact = (req, res) => {
 }
 
 module.exports.sendMail = (req, res) => {
-
-    let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: credentials.gmail.user,
-      pass: credentials.gmail.password
-    }
-  })
+    let transporter = nodemailer.createTransport(ses({
+    accessKeyId: credentials.accessKeyId,
+    secretAccessKey: credentials.secretAccessKey
+  }))
 
   req.checkBody('user.name', 'Name is a required field').notEmpty()
   req.checkBody('user.email', 'Please enter a valid email address').isEmail()
@@ -35,8 +32,8 @@ module.exports.sendMail = (req, res) => {
   let smessage = req.sanitizeBody('user.message').escape().trim();
 
   let mailOptions = {
-    from: req.body.user.email,
-    to: 'jkerr013@gmail.com',
+    from: 'jkerr@pixeltight.com',
+    to: 'jkerr@pixeltight.com',
     subject: 'PixelTight Form Response',
     text: suser + '\r\n' + semail + '\r\n' + smessage
   }
