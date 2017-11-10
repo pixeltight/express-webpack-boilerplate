@@ -50,7 +50,7 @@ module.exports.sendMail = (req, res) => {
       } else {
         res.send({ msg: 'Message sent! Thank you.', err: false })
         //console.log('Message %s sent %s', info.messageId, info.response)
-        console.log(`MESSAGE SENT: ${info}`)
+        console.log(`MESSAGE SENT: ${JSON.stringify(info)}`)
       }
     })
   }
