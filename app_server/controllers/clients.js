@@ -3,7 +3,7 @@ const clients = require('../models/clients.json')
 /* GET 'home' page */
 module.exports.clientList = (req, res) => {
   res.render('clientList', {
-    title: 'Jason Kerr Homepage',
+    title: 'Jason Kerr Frontend Developer Tampa, Florida',
     active_home: true,
     clients
   })
