@@ -66,7 +66,7 @@
   position: absolute;
   font-size: 2rem;
   font-weight: bold;
-  top: 45%;
+  top: 100px;
   background: rgba(0, 0, 0, 0.5);
   color: #FFF;
   border-radius: 4px 0;
@@ -77,7 +77,7 @@
   text-align: center;
 
   &:hover {
-    //color: darken($aqua, 10%);
+    color: #FFF;
   }
 }
 
