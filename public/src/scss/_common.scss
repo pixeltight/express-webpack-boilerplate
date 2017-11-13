@@ -55,6 +55,7 @@ textarea:focus {
 
 .pagebody__section {
   padding: 0 1.5rem;
+  overflow: hidden;
 
   //@media (min-width: 576px) {
   @media (min-width: 668px) {
@@ -117,6 +118,10 @@ textarea:focus {
 .pagebody__text {
   font-weight: lighter;
   line-height: 1.7rem;
+
+  &.top_margin {
+    margin-top: 1.5rem;
+  }
 }
 
 .pagebody__lede {
