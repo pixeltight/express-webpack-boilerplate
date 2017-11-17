@@ -17,6 +17,11 @@
   @media (min-width: 1024px) {
     padding: 1rem 10rem;
   }
+
+  &.sticky-footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 .footer__icon {

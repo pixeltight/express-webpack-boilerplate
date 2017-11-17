@@ -53,13 +53,13 @@ if (indexdots) {
     $('#contact-form').on('submit', function (e) {
       e.preventDefault()
       const dataString = $(this).serialize()
-      $('.form-fields__button').text('submitting...')
+      $('.form-fields__button').text('submitting...').attr('disabled', true)
       $.ajax({
         type: 'POST',
         url: '/contact',
         data: dataString, 
         success: function (data) {
-          $('.form-fields__button').text('send email')
+          $('.form-fields__button').attr('disabled', false).text('send email')
           $('.error-block').empty().removeClass('visible');
           if(data.errorMsg) {
             $('.error-block').addClass('visible');
@@ -68,8 +68,11 @@ if (indexdots) {
                 + val.msg + '</li>').appendTo('.error-block')
             })
           } else {
+
             $('.form-fields__button').text('success')
-            $('#contact-form').fadeOut('slow')
+            $('#contact-section').fadeOut('fast')
+            $('.footer').addClass('sticky-footer')
+            $('.success-message').addClass('visible')
           }
         }
       })
