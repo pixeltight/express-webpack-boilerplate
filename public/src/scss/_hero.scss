@@ -1,6 +1,9 @@
 .main {
+  position: relative;
+  overflow: hidden;
   margin-top: 4.1rem;
-  background: #FFF url("../img/bg_water.jpg");
+  background-color: transparent;
+  background-image: url("../../static/bg_water.svg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,6 +13,17 @@
 
   @media (min-width: 576px) {
     padding: 4rem 5rem 4rem;
+
+    &:before {
+      content: '';
+      background-image: url("../img/bg_water.jpg");
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.2;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -17,13 +31,14 @@
   }
 
   .main__hero {
-    background: rgba(252, 252, 252, 0.7);
+    background: rgba(252, 252, 252, 0.5);
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
 
     @media (min-width: 576px) {
       padding: 4rem;
+      background: rgba(252, 252, 252, 0.7);
     }
 
     .main__hero--header {

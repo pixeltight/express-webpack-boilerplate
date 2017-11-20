@@ -4,7 +4,8 @@
   color: #EEF;
   line-height: 1.5;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #EEF;
   }
 
@@ -13,7 +14,7 @@
     line-height: 1.75rem;
   }
   
-  .navbar-brand--blue {
+  .navbar-brand--coral {
     color: lighten($coral, 20%);
   }
 
